@@ -51,32 +51,27 @@ app.get("/", function(req, res) {
 });
 
 // This is the route we will send GET requests to retrieve our most recent search data.
-// This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
 app.get("/api", function(req, res) {
     console.log("Get all api method.");
-    res.send("Got all the memories");
-    // // We will find all the records, sort it in descending order, then limit the records to 5
-    // Memory.find({}).sort([
-    //     ["date", "descending"]
-    // ]).limit(5).exec(function(err, articles) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         res.send(articles);
-    //     }
-    // });
+     // We will find all the records, sort it in descending order, then limit the records to 5
+    Memory.find({}).sort([
+        ["date", "descending"]
+    ]).limit(5).exec(function(err, memories) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(memories);
+        }
+    });
 });
 
 // This is the route we will send POST requests to save each search.
 app.post("/api/save", function(req, res) {
     console.log("Inside Save memory method.");
-    console.log("BODY: " + req.body);
     var memory = req.body.memory;
-    console.log(memory);
-    // // Here we'll save the location based on the JSON input.
-    // // We'll use Date.now() to always get the current date time
-    //
+    console.log(`Memory to be saved: ${memory.data}`);
+
     var newMemory = new Memory(memory);
     newMemory.save(function(err, memory) {
         if (err) {
