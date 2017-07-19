@@ -47,7 +47,7 @@ class MemoryPage extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="text">Text..</label>
-                                <textArea  className="form-control" rows="10"  wrap="hard"  name="data" value={this.state.data} onChange={this.handleInputChange}/>
+                                <textArea  className="form-control" rows="10"  wrap="hard" name="data" value={this.state.data} onChange={this.handleInputChange}/>
                             </div>
 
                           <button type="submit" className="btn btn-default " id="save">

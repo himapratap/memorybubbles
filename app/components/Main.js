@@ -87,6 +87,8 @@ class Main extends Component {
                     </div>
                     <div className="row">
                         {/* <Route path="/saved" component={() => <Saved savedArticles={this.state.savedArticles} deleteArticle={this.deleteArticle}/>}></Route> */}
+                        <Route path="/saved" component={() => <Saved/>}/>
+
                     </div>
                 </div>
             </Router>

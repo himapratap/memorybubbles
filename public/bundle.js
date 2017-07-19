@@ -11876,7 +11876,13 @@ var Main = function (_Component) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__children_Book__["a" /* default */], null);
                             } })
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'row' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'row' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/saved', component: function component() {
+                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__children_Saved__["a" /* default */], null);
+                            } })
+                    )
                 )
             );
         }
@@ -12828,16 +12834,35 @@ var Saved = function (_Component) {
     function Saved(props) {
         _classCallCheck(this, Saved);
 
-        return _possibleConstructorReturn(this, (Saved.__proto__ || Object.getPrototypeOf(Saved)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Saved.__proto__ || Object.getPrototypeOf(Saved)).call(this, props));
+
+        _this.state = {
+            memories: []
+        };
+        return _this;
     }
 
     _createClass(Saved, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log("did mount");
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            console.log("will mount");
+            __WEBPACK_IMPORTED_MODULE_1__util_helpers__["a" /* default */].getAllMemories().then(function (memories) {
+                console.log(" will mount got memories");
+                console.log(memories.data);
+                this.setState({ 'memories': memories.data });
+            }.bind(this));
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
-            console.log(this.props);
-            var resultsLength = this.props.savedArticles.length;
+            console.log("Memories in the render method:");
+            console.log(this.state.memories);
+            var resultsLength = this.state.memories.length;
             var resultSection;
 
             if (resultsLength == 0) {
@@ -12847,11 +12872,11 @@ var Saved = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h4',
                         { className: 'headline' },
-                        'You have no saved articles'
+                        'You have no memories yet'
                     )
                 );
             } else {
-                resultSection = this.props.savedArticles.map(function (element, x) {
+                resultSection = this.state.memories.map(function (element, x) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'well', key: x },
@@ -12862,14 +12887,9 @@ var Saved = function (_Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'a',
-                            { className: 'btn btn-default button', href: element.url, target: '_blank' },
-                            'View Article'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'button',
-                            { className: 'btn btn-default button', 'data-article-index': x, onClick: _this2.props.deleteArticle.bind(_this2) },
-                            'Delete'
+                            'h6',
+                            null,
+                            element.data
                         )
                     );
                 });
@@ -12904,7 +12924,7 @@ var Saved = function (_Component) {
     return Saved;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Saved);
+/* harmony default export */ __webpack_exports__["a"] = (Saved);
 
 /***/ }),
 /* 120 */
