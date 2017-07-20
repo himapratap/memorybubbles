@@ -32,36 +32,33 @@ class Saved extends Component {
 
         if (resultsLength == 0) {
             resultSection = (
-                <div className="well">
-                    <h4 className="headline">You have no memories yet</h4>
+                <div>
+                    <h4>You have no memories yet</h4>
                 </div>
             );
         } else {
             resultSection = (this.state.memories.map((element, x) => {
                 return (
-                    <div className="well" key={x}>
-                        <h4 className="headline">
+                    <article className="thumb" key={x}>
+                        <a href="https://photos.smugmug.com/Photography/AP/i-gKH97th/0/6dd829be/X2/213%20DSC_2650HDR1aL77-X2.jpg" className="image"><img src="https://photos.smugmug.com/Photography/AP/i-gKH97th/0/6dd829be/X2/213%20DSC_2650HDR1aL77-X2.jpg" alt="" />
+                        </a>
+                        <h2>
                             {element.title}
-                        </h4>
-                        <hr/>
-                        <h6>{element.data}</h6>
+                        </h2>
+                        <p>
+                            {element.data}
+                        </p>
                         {/* <button className="btn btn-default button" data-article-index={x} onClick={this.props.deleteArticle.bind(this)}>Delete</button> */}
-
-                    </div>
+                    </article>
                 )
             }))
         }
 
         return (
-            <div className="col-sm-12">
-                <div className="panel panel-default">
-                    <div className="panel-heading panel-s">
-                        <h3 className="panel-title">
-                            <span className="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                            Saved</h3>
-                    </div>
-                    <div className="panel-body" id="wellSection">{resultSection}</div>
-                </div>
+            <div id="wrapper">
+            <div id="main">
+                {resultSection}
+            </div>
             </div>
         );
     }
