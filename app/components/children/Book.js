@@ -79,12 +79,12 @@ class Book extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
+            <div>
+                <div>
                     <MemoryPage saveMemory={this.saveMemory}/>
                 </div>
 
-                <div className="row">
+                <div>
                     <Memories/>
                 </div>
             </div>

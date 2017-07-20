@@ -32,29 +32,29 @@ class MemoryPage extends Component {
     render() {
         return (
             <div className="col-sm-12">
-                <div className="panel panel-default">
-                    <div className="panel-heading panel-s">
-                        <h3 className="panel-title">
-                            <i className="fa  fa-list-alt"></i>
+                <div>
+                    <div>
+                        <h3>
+                            <i></i>
                             New Memory</h3>
                     </div>
-                    <div className="panel-body">
+                    <div>
                         <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
+                            <div >
                                 <label htmlFor="title">Title</label>
-                                <input type="text" className="form-control" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
+                                <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
                             </div>
 
-                            <div className="form-group">
+                            <div>
                                 <label htmlFor="text">Text..</label>
-                                <textArea  className="form-control" rows="10"  wrap="hard" name="data" value={this.state.data} onChange={this.handleInputChange}/>
+                                <textArea rows="10"  wrap="hard" name="data" value={this.state.data} onChange={this.handleInputChange}/>
                             </div>
 
-                          <button type="submit" className="btn btn-default " id="save">
-                                <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
+                          <button type="submit" id="save">
+                                <span ></span>
                                 Save</button>
-                            <button type="submit" className="btn btn-default " id="clearButton">
-                                <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            <button type="submit" id="clearButton">
+                                <span aria-hidden="true"></span>
                                 Clear</button>
                         </form>
                     </div>
