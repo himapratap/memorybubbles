@@ -59,33 +59,30 @@ class Main extends Component {
     render() {
         return (
             <Router>
-                <div className="container">
-                    <div className="jumbotron jumbo text-center">
+                <div id="wrapper">
+                    <div id="main">
                         <Link to="/">
-
-                            <h1>
-                                <i className="fa fa-newspaper-o" aria-hidden="true"></i>
-                                Memory Bubbles !!</h1>
                         </Link>
                         <Link to="/saved">
-                            <button type="submit" className="btn btn-default ">
-                                <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
-                                All memories</button>
+                            <button type="submit">
+                                All memories
+                            </button>
                         </Link>
+                        
                         <Link to="/new">
-                            <button type="submit" className="btn btn-default ">
-                                <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
-                                Add new memory</button>
+                            <button type="submit">
+                                Add a new memory
+                            </button>
                         </Link>
                     </div>
 
-                    <div className="row">
+                    <div>
                         {/* <Route exact path="/" component={() => <Book updateSavedArticles={this.updateSavedArticles}/>}></Route> */}
                         <Route exact path="/" component={() => <Book/>}/>
 
                         <Route path="/new" component={() => <Book/>}/>
                     </div>
-                    <div className="row">
+                    <div>
                         {/* <Route path="/saved" component={() => <Saved savedArticles={this.state.savedArticles} deleteArticle={this.deleteArticle}/>}></Route> */}
                         <Route path="/saved" component={() => <Saved/>}/>
 
