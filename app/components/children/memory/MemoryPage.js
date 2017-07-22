@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import  TextEditor  from './TextEditor';
 
 class MemoryPage extends Component {
 
@@ -46,9 +47,9 @@ class MemoryPage extends Component {
                             </div>
 
                             <div>
-                                <label htmlFor="text">Text..</label>
-                                <textArea rows="10"  wrap="hard" name="data" value={this.state.data} onChange={this.handleInputChange}/>
-                            </div>
+                                 {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
+                                 <TextEditor/>
+                             </div>
 
                           <button type="submit" id="save">
                                 <span ></span>

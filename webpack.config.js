@@ -28,7 +28,22 @@ var config = {
                         ]
                     ]
                 }
+            }, {
+
+                test: /\.css$/,
+                loader: "css-loader"
+
+            },
+            { test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192' },
+            {
+              test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+              loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
+            },
+            {
+              test: /\.(eot|ttf|woff|woff2)$/,
+              loader: 'file-loader?name=public/fonts/[name].[ext]',
             }
+
         ]
     },
     resolve: {

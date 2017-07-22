@@ -3,6 +3,7 @@
 
 import React, {Component} from 'react';
 import Book from './children/Book';
+
 import Saved from './children/Saved';
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import helpers from './util/helpers';
@@ -68,7 +69,7 @@ class Main extends Component {
                                 All memories
                             </button>
                         </Link>
-                        
+
                         <Link to="/new">
                             <button type="submit">
                                 Add a new memory
@@ -77,8 +78,8 @@ class Main extends Component {
                     </div>
 
                     <div>
-                        {/* <Route exact path="/" component={() => <Book updateSavedArticles={this.updateSavedArticles}/>}></Route> */}
-                        <Route exact path="/" component={() => <Book/>}/>
+                          <Route exact path="/" component={() => <Book updateSavedArticles={this.updateSavedArticles}/>}></Route>  
+                        {/* <Route exact path="/" component={() => <TextEditor/>}/> */}
 
                         <Route path="/new" component={() => <Book/>}/>
                     </div>
