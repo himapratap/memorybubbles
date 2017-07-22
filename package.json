@@ -4,7 +4,7 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-       "start": "node server.js & webpack -w",
+      "start": "node server.js & webpack -w",
       "prod": "node server.js",
       "dev": "nodemon server.js & webpack -w",
       "build-dist": "webpack --progress"
