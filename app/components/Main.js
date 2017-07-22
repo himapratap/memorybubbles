@@ -62,6 +62,13 @@ class Main extends Component {
 
     }
 
+    //saves the article in db
+    saveUser(user) {
+        console.log(" Save user called");
+        console.log(event);
+        helpers.saveUserInDB(user);
+    }
+
     render() {
         return (
             <Router>
@@ -110,7 +117,7 @@ class Main extends Component {
                         <Route exact path="/login" component={() => <Signin/>}/> 
 
                         {/*Sign Up */}
-                        <Route exact path="/signup" component={() => <Signup/>}/>
+                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/>
 
                         {/*All memories*/} 
                         <Route exact path="/saved" component={() => <Saved/>}/>

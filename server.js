@@ -12,6 +12,7 @@ var path       = require("path")
 
 // Require Article Schema
 var Memory = require("./models/Memory");
+var User = require("./models/User");
 
 // Create Instance of Express
 var app = express();
@@ -69,6 +70,7 @@ app.get("/", function(req, res) {
 
 // This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
+
 app.get("/api", function(req, res) {
     console.log("Get all api method.");
      // We will find all the records, sort it in descending order, then limit the records to 5
@@ -100,22 +102,6 @@ app.post("/api/save", function(req, res) {
 
 });
 
-// Post route to database for new user
-app.post("/api/user", function(req, res) {
-    var user = req.body.user
-
-    var newMemory = new Memory(memory);
-    newMemory.save(function(err, memory) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send("Saved memory");
-        }
-    });
-
-});
-
-
 // This is the route we will send POST requests to save each search.
 app.delete("/api/:id", function(req, res) {
     console.log("Delete memory by id method");
@@ -133,6 +119,23 @@ app.delete("/api/:id", function(req, res) {
     //          res.send("Deleted Article");
     //      }
     //  });
+
+});
+
+// Post route to database for new user
+app.post("/api/user/save", function(req, res) {
+    var user = req.body.user
+    console.log("Saving the new user");
+
+    var newUser = new User(user);
+    newUser.save(function(err, user) {
+        if (err) {
+            console.log(err);
+        } else {
+            // res.send("Saved the new user");
+            console.log("success save user")
+        }
+    });
 
 });
 
