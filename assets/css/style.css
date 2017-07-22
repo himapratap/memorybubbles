@@ -2,8 +2,6 @@ body{
   background: url(../images/Newspapers.jpg);
 }
 
-
-
 .jumbo  {
   opacity: .8;
 
@@ -14,7 +12,6 @@ body{
 .panel-heading, button{
 
   background-color: black !important;
-
   opacity: .8 !important;
   color: white !important;
 }
