@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import  TextEditor  from './TextEditor';
+import TextEditor from './TextEditor';
 
 class MemoryPage extends Component {
 
@@ -7,10 +7,11 @@ class MemoryPage extends Component {
         super(props);
         this.state = {
             title: "",
-            data: "",
-         };
+            data: ""
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onChangeText = this.onChangeText.bind(this);
     }
 
     handleInputChange(event) {
@@ -30,6 +31,12 @@ class MemoryPage extends Component {
         this.setState({});
     }
 
+    onChangeText(contents){
+        console.log('MemoryPage : onChangeText got the contents');
+        console.log(contents);
+        this.setState({data : contents});
+    }
+
     render() {
         return (
             <div className="col-sm-12">
@@ -47,11 +54,11 @@ class MemoryPage extends Component {
                             </div>
 
                             <div>
-                                 {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
-                                 <TextEditor/>
-                             </div>
+                                {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
+                                <TextEditor onChangeText={this.onChangeText}/>
+                            </div>
 
-                          <button type="submit" id="save">
+                            <button type="submit" id="save">
                                 <span ></span>
                                 Save</button>
                             <button type="submit" id="clearButton">

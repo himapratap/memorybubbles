@@ -57,7 +57,7 @@ app.get("/api", function(req, res) {
      // We will find all the records, sort it in descending order, then limit the records to 5
     Memory.find({}).sort([
         ["date", "descending"]
-    ]).limit(5).exec(function(err, memories) {
+    ]).limit(100).exec(function(err, memories) {
         if (err) {
             console.log(err);
         } else {

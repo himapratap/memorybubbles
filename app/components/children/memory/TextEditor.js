@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import editor  from '../../../../assets/css/editor.css'
+import editor from '../../../../assets/css/editor.css'
 import draftToHtml from 'draftjs-to-html';
-import { convertToRaw } from 'draft-js';
+import {convertToRaw} from 'draft-js';
 import draftToMarkdown from 'draftjs-to-markdown';
-import { Editor } from 'react-draft-wysiwyg';
+import {Editor} from 'react-draft-wysiwyg';
 import uploadImageCallBack from '../../util/uploadImageCallBack';
 import sampleEditorContent from '../../util/sampleEditorContent';
 import bold from '../../../images/demo/bold.gif';
@@ -29,8 +29,8 @@ import redo from '../../../images/demo/redo.gif';
 
 class TextEditor extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             editorContents: []
         };
@@ -41,6 +41,12 @@ class TextEditor extends Component {
         editorContents[index] = editorContent;
         editorContents = [...editorContents];
         this.setState({editorContents});
+        console.log('Editor contents');
+        console.log(this.state.editorContents[2].getCurrentContent());
+        console.log('Editor contents plain text');
+        console.log(this.state.editorContents[2].getCurrentContent().getPlainText());
+
+        this.props.onChangeText(this.state.editorContents[2].getCurrentContent().getPlainText());
     };
 
     render() {
@@ -48,23 +54,31 @@ class TextEditor extends Component {
 
         return (
             <div className="demo-root">
-              {/* <div className="demo-label">
+                {/* <div className="demo-label">
                 Editor with similar options grouped in drop-down.
               </div> */}
-              <div className="demo-editorSection">
-                <Editor
-                  wrapperClassName="demo-wrapper-wide"
-                  editorClassName="demo-editor"
-                  toolbar={{
-                    inline: { inDropdown: true },
-                    list: { inDropdown: true },
-                    textAlign: { inDropdown: true },
-                    link: { inDropdown: true },
-                    history: { inDropdown: true },
-                    image: { uploadCallback: uploadImageCallBack }
-                  }}
-                />
-              </div>
+                <div className="demo-editorSection">
+                    <Editor wrapperClassName="demo-wrapper-wide" editorClassName="demo-editor" onEditorStateChange={this.onEditorStateChange.bind(this, 2)} toolbar={{
+                        inline: {
+                            inDropdown: false
+                        },
+                        list: {
+                            inDropdown: true
+                        },
+                        textAlign: {
+                            inDropdown: true
+                        },
+                        link: {
+                            inDropdown: true
+                        },
+                        history: {
+                            inDropdown: true
+                        },
+                        image: {
+                            uploadCallback: uploadImageCallBack
+                        }
+                    }}/>
+                </div>
             </div>
         );
     }
