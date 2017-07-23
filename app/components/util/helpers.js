@@ -25,7 +25,16 @@ const helpers = {
     deleteMemory(id) {
         console.log(`Deleting memory in db`);
         return axios.delete('/api/'+id);
-    }
+    },
+
+
+
+    saveUserInDB(user) {
+        console.log('Saving user in db');
+        console.log(user.name);
+
+        return axios.post('/api/user/save', {user: user})
+    },
 
 }
 
