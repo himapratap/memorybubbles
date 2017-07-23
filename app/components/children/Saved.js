@@ -1,6 +1,7 @@
 //* **Saved** - displays the Saved Articles that were searched and stored in the database
 import React, {Component} from 'react';
 import helpers from '../util/helpers'
+import renderHTML from 'react-render-html';
 
 class Saved extends Component {
     constructor(props) {
@@ -8,10 +9,6 @@ class Saved extends Component {
         this.state = {
             memories: []
         }
-    }
-
-    componentDidMount() {
-        console.log("did mount");
     }
 
     componentWillMount() {
@@ -40,15 +37,11 @@ class Saved extends Component {
             resultSection = (this.state.memories.map((element, x) => {
                 return (
                     <article className="thumb" key={x}>
-                        <a href="https://photos.smugmug.com/Photography/AP/i-gKH97th/0/6dd829be/X2/213%20DSC_2650HDR1aL77-X2.jpg" className="image"><img src="https://photos.smugmug.com/Photography/AP/i-gKH97th/0/6dd829be/X2/213%20DSC_2650HDR1aL77-X2.jpg" alt="" />
-                        </a>
                         <h2>
                             {element.title}
                         </h2>
-                        <p>
-                            {element.data}
-                        </p>
-                        {/* <button className="btn btn-default button" data-article-index={x} onClick={this.props.deleteArticle.bind(this)}>Delete</button> */}
+                        <div>{renderHTML(element.data)}
+                        </div>
                     </article>
                 )
             }))
@@ -56,9 +49,9 @@ class Saved extends Component {
 
         return (
             <div id="wrapper">
-            <div id="main">
-                {resultSection}
-            </div>
+                <div id="main">
+                    {resultSection}
+                </div>
             </div>
         );
     }
