@@ -5,9 +5,8 @@ import helpers from '../../util/helpers'
 class Signup extends Component {
     constructor(props) {
         super(props);
-      
-      this.state = { firstname: "", lastname: "", email: "", password: "", password2: ""};
-       this.handleChange = this.handleChange.bind(this);
+          this.state = { firstname: "", lastname: "", email: "", password: "", password2: ""};
+          this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillMount() {

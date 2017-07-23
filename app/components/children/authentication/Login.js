@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-class Signin extends Component {
+
+class Login extends Component {
     constructor(props) {
         super(props);
-      //  this.saveArticle = this.saveArticle.bind(this);
-      this.state = {text1: "", text2: ""};
-       this.handleChange = this.handleChange.bind(this);
+            this.state = {email: "", password: ""};
+            this.handleChange = this.handleChange.bind(this);
     }
+
     handleChange(event) {
         // Here we create syntax to capture any change in text to the query terms (pre-search).
         // See this Stack Overflow answer for more details:
@@ -14,7 +15,7 @@ class Signin extends Component {
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     }
-     // When a user submits...
+    
     handleSubmit(event) {
         // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
         // clicking the button
@@ -37,7 +38,7 @@ class Signin extends Component {
                         <input type="text" 
                         value={this.state.text1}
                         name="email"
-                        id = "text1"
+                        id = "email"
                         onChange={this.handleChange}
                         required />
                     </div>
@@ -47,7 +48,7 @@ class Signin extends Component {
                       className="form-control" 
                       name="password"
                       value={this.state.text2}
-                      id="text2"
+                      id="password"
                       onChange={this.handleChange}/>
                     </div>
                     <button type="submit" className="btn btn-warning btn-lg">Login</button>
@@ -60,4 +61,4 @@ class Signin extends Component {
             )
     }
 }
-export default Signin;
+export default Login;
