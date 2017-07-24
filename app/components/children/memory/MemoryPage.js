@@ -31,20 +31,17 @@ class MemoryPage extends Component {
         this.setState({});
     }
 
-    onChangeText(contents){
+    onChangeText(contents) {
         console.log('MemoryPage : onChangeText got the contents');
         console.log(contents);
-        this.setState({data : contents});
+        this.setState({data: contents});
     }
 
     render() {
         return (
             <div className="col-sm-12">
-                <div>
-                    <div>
-                        <h3>
-                            <i></i>
-                            New Memory</h3>
+                     <div>
+                        <h3>New Memory</h3>
                     </div>
                     <div>
                         <form onSubmit={this.handleSubmit}>
@@ -67,8 +64,7 @@ class MemoryPage extends Component {
                         </form>
                     </div>
                 </div>
-            </div>
-        )
+         )
     }
 }
 

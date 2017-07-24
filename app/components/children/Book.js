@@ -28,8 +28,8 @@ class Book extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="container">
+                <div className= "row">
                     <MemoryPage saveMemory={this.saveMemory}/>
                 </div>
             </div>
