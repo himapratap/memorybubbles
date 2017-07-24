@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import Home from './Home.js';
 import Book from './children/Book';
 import Saved from './children/Saved';
-import Signin from './children/authentication/Signin';
+import Login from './children/authentication/Login';
 import Signup from './children/authentication/Signup';
 
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom';
@@ -24,6 +24,10 @@ class Main extends Component {
         console.log(" Save user called");
         console.log(event);
         helpers.saveUserInDB(user);
+    }
+
+    login(login) {
+        helpers.checkLogin(login);
     }
 
     render() {
@@ -68,11 +72,17 @@ class Main extends Component {
                     {/*Component Routes*/}
                     <div>
                         {/*HomePage*/}
-                        <Route exact path="/" component={() => <Home/>}/> {/*Login*/}
-                        <Route exact path="/login" component={() => <Signin/>}/> {/*Sign Up */}
-                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/> {/*All memories*/}
-                        <Route exact path="/saved" component={() => <Saved/>}/> {/*New memory*/}
-                        {/*<Route path="/new" component={() => <Book/>}/>*/}
+                       <Route exact path="/" component={() => <Home/>}/>
+
+                        {/*Login*/}
+                        <Route exact path="/login" component={() => <Login login = {this.login}/>}/> 
+
+                        {/*Sign Up */}
+                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/>
+
+                        {/*All memories*/} 
+                        <Route exact path="/saved" component={() => <Saved/>}/>
+
                         <Route exact path="/new" component={() => <Book/>}></Route>
                     </div>
                 </div>
