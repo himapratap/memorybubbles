@@ -9,58 +9,15 @@ import Saved from './children/Saved';
 import Login from './children/authentication/Login';
 import Signup from './children/authentication/Signup';
 
-
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import helpers from './util/helpers';
 
 class Main extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     savedArticles: ''
-        // }
-        // this.updateSavedArticles = this.updateSavedArticles.bind(this);
-        // this.deleteArticle = this.deleteArticle.bind(this);
     }
     // The moment the page renders get the History
-    componentDidMount() {
-        // Get the latest history.
-        // console.log('getting saved articles');
-        // helpers.getSavedArticles().then(function(response) {
-        //     console.log(response);
-        //     if (response !== this.state.savedArticles) {
-        //         console.log("savedArticles", response.data);
-        //         this.setState({savedArticles: response.data});
-        //     }
-        // }.bind(this));
-    }
-
-    updateSavedArticles(newArticle) {
-        // console.log('Updating saved articles array in state');
-        // var savedArticles = this.state.savedArticles.slice();
-        // savedArticles.push(newArticle)
-        //
-        // this.setState({savedArticles: savedArticles});
-        // console.log('Updated saved articles array in state');
-
-    }
-
-    deleteArticle(index) {
-        // console.log(`Deleting item from the saved list ${index}`);
-        // var array = this.state.savedArticles;
-        // var itemToBeDeleted = array.splice(index, 1);
-        //
-        // helpers.deleteArticle(itemToBeDeleted[0]._id).then(() => {
-        //     console.log(`Deleted item from the saved with id `);
-        //     console.log('SLiced array');
-        //     console.log(array);
-        //
-        //     this.setState({savedArticles: array});
-        //     console.log('AFter slice on delete');
-        //     console.log(this.state.savedArticles);
-        // });
-
-    }
+    componentDidMount() {}
 
     //saves the article in db
     saveUser(user) {
@@ -107,7 +64,7 @@ class Main extends Component {
                         {/*Add a new memory*/}
                         <Link to="/new">
                             <button type="submit">
-                                 New Memory
+                                New Memory
                             </button>
                         </Link>
                     </div>
@@ -126,8 +83,6 @@ class Main extends Component {
                         {/*All memories*/} 
                         <Route exact path="/saved" component={() => <Saved/>}/>
 
-                        {/*New memory*/} 
-                        {/*<Route path="/new" component={() => <Book/>}/>*/} 
                         <Route exact path="/new" component={() => <Book/>}></Route>
                     </div>
                 </div>
