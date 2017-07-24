@@ -29,6 +29,7 @@ class Book extends React.Component {
     //saves the article in db
     saveMemory(memory) {
         console.log(" Save memory called");
+        console.log(memory);
         console.log(event);
         // var articleIndex = event.target.dataset.articleIndex;
         // let {

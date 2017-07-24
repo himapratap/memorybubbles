@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import Home from './Home.js';
 import Book from './children/Book';
 import Saved from './children/Saved';
-import Signin from './children/authentication/Signin';
+import Login from './children/authentication/Login';
 import Signup from './children/authentication/Signup';
 
 
@@ -69,6 +69,10 @@ class Main extends Component {
         helpers.saveUserInDB(user);
     }
 
+    login(login) {
+        helpers.checkLogin(login);
+    }
+
     render() {
         return (
             <Router>
@@ -114,7 +118,7 @@ class Main extends Component {
                        <Route exact path="/" component={() => <Home/>}/>
 
                         {/*Login*/}
-                        <Route exact path="/login" component={() => <Signin/>}/> 
+                        <Route exact path="/login" component={() => <Login login = {this.login}/>}/> 
 
                         {/*Sign Up */}
                         <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/>

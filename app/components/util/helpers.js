@@ -6,8 +6,6 @@ const helpers = {
 
     searchMemories(searchQuery) {
         console.log('Searching for articles');
-
-
     },
 
     saveMemoryInDB(memory) {
@@ -27,13 +25,17 @@ const helpers = {
         return axios.delete('/api/'+id);
     },
 
-
-
     saveUserInDB(user) {
         console.log('Saving user in db');
-        console.log(user.name);
+        console.log(user);
 
         return axios.post('/api/user/save', {user: user})
+    },
+
+    checkLogin(login) {
+        console.log('Login Attempt Helper');
+        console.log(login);
+        return axios.post('/api/login')
     },
 
 }
