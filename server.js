@@ -4,13 +4,17 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Passport Dependencies
-var passport   = require('passport')
-var session    = require('express-session')
-var path       = require("path")
+// ***&&&*** Passport video dependencies
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
-
-// Require Article Schema
+// Require Models
 var Memory = require("./models/Memory");
 var User = require("./models/User");
 
@@ -29,13 +33,52 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 
 app.use(express.static("./public"));
 
+
+// ***&&&*** 
+app.use(cookieParser());
+// ***&&&*** Express Session
+app.use(session({
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: true
+}));
+// ***&&&*** Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+// ***&&&*** Express Validator
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+
+// ***&&&*** Connect Flash
+app.use(flash());
+// ***&&&*** Global Vars
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
+  next();
+});
+
+
+
 // -------------------------------------------------
 
-
-
-
-
-// MongoDB Configuration configuration (Change this URL to your own DB)
+// MongoDB Configuration configuration
 var dbUrl = "mongodb://localhost/memorybubbles";
 
 if (process.env.MONGODB_URI) {
@@ -55,13 +98,6 @@ db.once("open", function() {
 });
 
 // -------------------------------------------------
-
-
-//Passport requirements
-var authRoute = require('./Controllers/authentication.js')(app,passport);
-//load passport strategies
-   // require('./config/passport.js')(passport,db.Users);
-var strategies = require('./assets/javascript/passport.js')(passport,db.Users);
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
@@ -125,19 +161,63 @@ app.delete("/api/:id", function(req, res) {
 // Post route to database for new user
 app.post("/api/user/save", function(req, res) {
     var user = req.body.user
-    console.log("Saving the new user");
+    console.log(user);
+    console.log(user.firstname)
+    console.log(user.lastname)
+    console.log(user.email)
+    console.log(user.password)
+    console.log(user.password2)
 
-    var newUser = new User(user);
-    newUser.save(function(err, user) {
-        if (err) {
-            console.log(err);
-        } else {
-            // res.send("Saved the new user");
-            console.log("success save user")
-        }
-    });
+    var newUser = new User({
+            firstname: user.firstname,
+            lastname: user.lastname,
+            email:user.email,
+            password: user.password
+        });
+    User.createUser(newUser, function(err, user){
+            if(err) throw err;
+            console.log(user + "User is in!");
+        });
 
 });
+
+// ***&&*** Passport Login Code
+passport.use(new LocalStrategy(
+  function(email, password, done) {
+    email = login.email
+   User.getUserByEmail(email, function(err, user){
+    if(err) throw err;
+    if(!user){
+        return done(null, false, {message: 'Unknown User'});
+    }
+
+    User.comparePassword(password, user.password, function(err, isMatch){
+        if(err) throw err;
+        if(isMatch){
+            return done(null, user);
+        } else {
+            return done(null, false, {message: 'Invalid password'});
+        }
+    });
+   });
+  }));
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.getUserById(id, function(err, user) {
+    done(err, user);
+  });
+});
+
+// Login
+app.post("/api/login", passport.authenticate('local', {successRedirect:'/', failureRedirect:'/',failureFlash: true}),
+  function(req, res) {
+    res.redirect('/');
+  });
+
 
 // -------------------------------------------------
 
