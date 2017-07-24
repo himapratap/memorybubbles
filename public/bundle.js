@@ -9847,7 +9847,7 @@ var helpers = {
     checkLogin: function checkLogin(login) {
         console.log('Login Attempt Helper');
         console.log(login);
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/login');
+        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/login', { login: login });
     }
 };
 

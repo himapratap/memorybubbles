@@ -35,7 +35,7 @@ const helpers = {
     checkLogin(login) {
         console.log('Login Attempt Helper');
         console.log(login);
-        return axios.post('/api/login')
+        return axios.post('/api/login', {login: login})
     },
 
 }

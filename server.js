@@ -184,7 +184,6 @@ app.post("/api/user/save", function(req, res) {
 // ***&&*** Passport Login Code
 passport.use(new LocalStrategy(
   function(email, password, done) {
-    email = login.email
    User.getUserByEmail(email, function(err, user){
     if(err) throw err;
     if(!user){
@@ -213,11 +212,14 @@ passport.deserializeUser(function(id, done) {
 });
 
 // Login
-app.post("/api/login", passport.authenticate('local', {successRedirect:'/', failureRedirect:'/',failureFlash: true}),
-  function(req, res) {
-    res.redirect('/');
-  });
 
+
+app.post("/api/login", function(req, res) {
+    var login = req.body.login
+    console.log("server: " + login.email + login.password);
+
+
+});
 
 // -------------------------------------------------
 
