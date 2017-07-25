@@ -128,25 +128,6 @@ app.post("/api/save", function(req, res) {
 
 });
 
-// This is the route we will send POST requests to save each search.
-app.delete("/api/:id", function(req, res) {
-    console.log("Delete memory by id method");
-    res.send("Delete memory by id method");
-    //   var id = req.params.id ;
-    //   console.log("Inside delete request api: " + id);
-    //
-    //    // Here we'll save the location based on the JSON input.
-    //   // We'll use Date.now() to always get the current date time
-    //  Article.find({_id :id}).remove().exec(function(err,article) {
-    //      if (err) {
-    //          console.log(err);
-    //      } else {
-    //          console.log(`Deleted the article`);
-    //          res.send("Deleted Article");
-    //      }
-    //  });
-
-});
 
 // Post route to database for new user
 app.post("/api/user/save", function(req, res) {
@@ -166,6 +147,27 @@ app.post("/api/user/save", function(req, res) {
     });
 
 });
+
+app.post('/auth/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            res.status = 400;
+            return next(err);
+        }
+        if (!user) {
+            res.status = 403;
+            return res.send('invalid');
+        }
+        req.logIn(user, function(err) {
+            if (err) {
+                return next(err);
+            }
+            res.status = 200;
+            return res.send(user);
+        });
+    })(req, res, next);
+});
+
 
 // ***&&*** Passport Login Code
 passport.use(new LocalStrategy({ // Our user will sign in using an email, rather than a "username"
@@ -204,32 +206,6 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-//
-
-// app.post("/auth/login", passport.authenticate("local"), function(req, res) {
-//     res.send('success');
-// });
-
-app.post('/auth/login', function(req, res, next) {
-    passport.authenticate('local', function(err, user, info) {
-        if (err) {
-            res.status = 400;
-
-            return next(err);
-        }
-        if (!user) {
-            res.status = 403;
-            return res.send('invalid');
-        }
-        req.logIn(user, function(err) {
-            if (err) {
-                return next(err);
-            }
-            res.status = 200;
-            return res.send('success');
-        });
-    })(req, res, next);
-});
 // Listener
 app.listen(PORT, function() {
     console.log("Express Server listening on PORT: " + PORT);

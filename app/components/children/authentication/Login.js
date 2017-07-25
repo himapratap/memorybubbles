@@ -27,12 +27,13 @@ class Login extends Component {
     handleSubmit(event) {
         event.preventDefault();
         helpers.checkLogin(this.state).then((result) => {
-            console.log(`Login result : ${result}`);
+            console.log(`Login result`);
+            console.log(result);
 
-            if (result.data == 'success') {
+            if (result.status == 200) {
                 this.setState({authenticated: true});
                 console.log(`Login success`);
-
+                localStorage.setItem('name',result.data.firstname);
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
                 console.log(`Login failed`);
