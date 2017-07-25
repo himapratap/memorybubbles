@@ -42,6 +42,7 @@ class TextEditor extends Component {
     }
 
     onEditorStateChange(editorContent) {
+console.log(editorContent);
         this.setState({editorContents : editorContent});
         // console.log('Editor current contents');
         // console.log(this.state.editorContents.getCurrentContent());

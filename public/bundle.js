@@ -9835,7 +9835,7 @@ var helpers = {
     },
     getAllMemories: function getAllMemories() {
         console.log('Getting memories in db');
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api');
+        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/' + localStorage.userId);
     },
     deleteMemory: function deleteMemory(id) {
         console.log('Deleting memory in db');
@@ -35975,10 +35975,11 @@ var Login = function (_Component) {
                 console.log('Login result');
                 console.log(result);
 
-                if (result.status == 200) {
+                if (result.data != 'invalid') {
                     _this2.setState({ authenticated: true });
                     console.log('Login success');
                     localStorage.setItem('name', result.data.firstname);
+                    localStorage.setItem('userId', result.data._id);
                 } else {
                     _this2.setState({ errMssg: 'Invalid Username or Password' });
                     console.log('Login failed');
@@ -36235,7 +36236,8 @@ var MemoryPage = function (_Component) {
 
         _this.state = {
             title: "",
-            data: ""
+            data: "",
+            userId: localStorage.userId
         };
         _this.handleInputChange = _this.handleInputChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
@@ -36450,6 +36452,7 @@ var TextEditor = function (_Component) {
     _createClass(TextEditor, [{
         key: 'onEditorStateChange',
         value: function onEditorStateChange(editorContent) {
+            console.log(editorContent);
             this.setState({ editorContents: editorContent });
             // console.log('Editor current contents');
             // console.log(this.state.editorContents.getCurrentContent());
