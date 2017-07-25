@@ -1991,6 +1991,8 @@
 			color: inherit;
 		}
 
+/*Extra Styling*/
+
 .homepage-hero-module {
     border-right: none;
     border-left: none;
@@ -1998,14 +2000,13 @@
     height: 100%;
     width: 100%;
     margin-bottom: 0;
-
-
-
 }
+
 .no-video .video-container video,
 .touch .video-container video {
     display: none;
 }
+
 .no-video .video-container .poster,
 .touch .video-container .poster {
     display: block !important;
@@ -2042,49 +2043,52 @@
 
 
 #polina { 
-  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-weight:100; 
+  /*font-weight:100; */
   background: rgba(0,0,0,0.3);
+  /*background-color: black;*/
   color: white;
-  padding: 2rem;
+  /*padding: 6rem;*/
   width: 70%;
   margin:auto;
-  margin-top: 10%;
+  /*margin-top: 10%;*/
   /*float: right;*/
-  font-size: 1.2rem;
+  /*font-size: 1.2rem;*/
   position: absolute;
+  padding-top: 50px;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   text-align: center;
- 
 }
-h1 {
+
+/*h1 {
   font-size: 3rem;
   text-transform: uppercase;
   margin-top: 0;
   text-align: center;
   letter-spacing: .3rem;
 }
+*/
 #polina button { 
-  display: block;
-  width: 100%;
-  padding: .4rem;
-  border: none; 
-  margin:auto; 
-  font-size: 1.3rem;
+  /*display: block;*/
+  /*width: 100%;*/
+  /*padding: .4rem;*/
+  /*border: none; */
+  /*margin:auto; */
+  /*font-size: 1.3rem;*/
   background: rgba(255,255,255,0.23);
-  color: #fff;
-  border-radius: 3px; 
-  cursor: pointer;
-  -webkit-transition: .3s background;
-  transition: .3s background;
+  /*color: #fff;*/
+  /*border-radius: 3px; */
+  /*cursor: pointer;*/
+  /*-webkit-transition: .3s background;*/
+  /*transition: .3s background;*/
 }
 #polina button:hover{ 
-   background: rgba(0,0,0,0.5);
+   /*background: rgba(0,0,0,0.5);*/
 }
 
-a {
+/*a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
@@ -2092,22 +2096,39 @@ a {
   padding: .5rem;
   -webkit-transition: .6s background;
   transition: .6s background; 
-  /*width: 50%;*/
-  /*margin: auto;*/
-  /*text-align: center;*/
 }
+
 a:hover{
   background:rgba(0,0,0,0.9);
-}
+}*/
 
 .mid-button{
 	width: 50%;
 	/*margin: auto;*/
 }
 
-
+#logo {
+	font-family: 'Mr Dafoe', cursive;
+	font-size: 150px;
+	font-weight: 200%;
+	color: #34a58e;
+	text-transform: lowercase;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	text-decoration: none;
+}
 .login-page{
 	margin-top: 5%;
+
+}
+
+#logo:a {
+	text-decoration: none;
+}
+
+#landingfont {
+	color: #34a58e;
+	background-color: black;
 }
 
 		

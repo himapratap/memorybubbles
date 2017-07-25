@@ -19,37 +19,28 @@ class Home extends React.Component {
 
     render () {
         return (
-
             <div className="homepage-hero-module">
-                
-                 <div className="video-container">
-
+                <div className="video-container">
                     <div className="filter"></div>
                     <video loop autoPlay className="fillWidth">
                         <source src={this.state.videoURL} type="video/mp4" />
                         <source src={this.state.videoWebURL} type="video/webm" />
-                    
                     </video>
                     <div id="polina">
-                        <h1>The Name of The Project</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam. Nam ultricies, velit ac suscipit vehicula, turpis eros sollicitudin lacus, at convallis mauris magna non justo. Etiam et suscipit elit. Morbi eu ornare nulla, sit amet ornare est. Sed vehicula ipsum a mattis dapibus. Etiam volutpat vel enim at auctor.</p>
-                                <p>Aenean pharetra convallis pellentesque. Vestibulum et metus lectus. Nunc consectetur, ipsum in viverra eleifend, erat erat ultricies felis, at ultricies mi massa eu ligula. Suspendisse in justo dapibus metus sollicitudin ultrices id sed nisl.</p>
-                             
-                                        <Link className="mid-button" to="/login">
-                                            <button type="submit">
-                                                Get Started
-                                            </button>
-                                        </Link>
-
-                                                     
-                              
+                        <Link to="/login">
+                        <h1 id="logo">MemorySTACK</h1>
+                        </Link>
                     </div>
                 </div>
             </div>
-
         )
     }
 };
 
 export default Home;
 
+{/*<p>Write statuses, upload images, decorate with emojis.</p>
+                        <p>All in your own private digital space.</p>
+                        <p>Share the information you want to share!</p>*/}
+                        
+{/*<button type="submit" className="special">Get Started</button>*/}

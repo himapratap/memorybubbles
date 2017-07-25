@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import helpers from '../../util/helpers';
 import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
 
+=======
+import helpers from '../../util/helpers'
+import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
+>>>>>>> 42a153b23599ea0b58c96b077c095e6c79fa1224
 
 class Signup extends Component {
     constructor(props) {
@@ -37,37 +42,40 @@ class Signup extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row login-page">
-                    <h2>Register</h2>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                            <label>First Name</label>
-                            <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Last Name</label>
-                            <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname"  onChange={this.handleChange} required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
-                        </div>
-                        <div className="form-group">
-                            <label>Confirm Password</label>
-                            <input type="password" className="form-control" placeholder="Password" name="password2" id="password2"  onChange={this.handleChange} required/>
-                        </div>
-                        <Link to="/login">
-                            <button type="submit">
-                                Submit
-                            </button>
-                        </Link>
-                    </form>
+                <div className="row">
+                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-4">
+                        <h1>Register</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Last Name</label>
+                                <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname" onChange={this.handleChange} required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Password</label>
+                                <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" className="form-control" placeholder="Password" name="password2" id="password2" onChange={this.handleChange} required/>
+                            </div>
+                            <button type="submit" className="">Submit</button>
+                        </form>
+                    </div>
+                    <div className="col-md-4">
+                    </div>
                 </div>
             </div>
+
         )
     }
 }

@@ -61,13 +61,22 @@ class Login extends Component {
 
         return (
           
-            <div className="container">
-                    <div className="row login-page">
-                        <div className="col-md-4">
-
+            <div className="">
+                    <div className="row">
+                        <div className="col-md-2">
                         </div>
                         <div className="col-md-4">
-                                <h1 className="">Login</h1>
+                            <h1 id="logo">MemorySTACK</h1>
+                        </div>
+                        <div className="col-md-4">
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">
+                        </div>
+                        <div className="col-md-4">
+                        
+                                <h1>Login</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label>Email</label>
@@ -77,16 +86,11 @@ class Login extends Component {
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
                                     </div>
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" className="special">Submit</button>
                                     <div>{this.state.errMssg}</div>
                                 </form>
-                                <p>Need an account?
-                                    <Link to="/signup">
-                                            <button type="submit">
-                                                Sign Up
-                                            </button>
-                                    </Link>
-                                </p>
+                                <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
+                                    </Link></p>     
                         </div>
                         <div className="col-md-4">
                         </div>
