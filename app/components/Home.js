@@ -31,18 +31,14 @@ class Home extends React.Component {
                     
                     </video>
                     <div id="polina">
-                        <h1>The Name of The Project</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam. Nam ultricies, velit ac suscipit vehicula, turpis eros sollicitudin lacus, at convallis mauris magna non justo. Etiam et suscipit elit. Morbi eu ornare nulla, sit amet ornare est. Sed vehicula ipsum a mattis dapibus. Etiam volutpat vel enim at auctor.</p>
-                                <p>Aenean pharetra convallis pellentesque. Vestibulum et metus lectus. Nunc consectetur, ipsum in viverra eleifend, erat erat ultricies felis, at ultricies mi massa eu ligula. Suspendisse in justo dapibus metus sollicitudin ultrices id sed nisl.</p>
-                             
-                                        <Link className="mid-button" to="/login">
-                                            <button type="submit">
-                                                Get Started
-                                            </button>
-                                        </Link>
-
-                                                     
-                              
+                        <h1>MemoryStax</h1>
+                            <p>How do you store and share your memories?</p>
+                            <p>Write statuses, upload images, decorate with emojis.</p>
+                            <p>All in your own private digital space.</p>
+                            <p>Share the information you want to share!</p>
+                                    <Link className="mid-button" to="/login">
+                                    <button type="submit" className="special">Get Started</button>
+                                    </Link>         
                     </div>
                 </div>
             </div>
