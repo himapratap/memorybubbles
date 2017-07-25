@@ -38,11 +38,13 @@ class MemoryPage extends Component {
     }
 
     render() {
+        const name = localStorage.name;
+        console.log(localStorage.name);
         return (
             <div className="col-sm-12">
                      <div>
-                        <h3>New Memory</h3>
-                    </div>
+                        <h3>Hi {name} !!!</h3>
+                     </div>
                     <div>
                         <form onSubmit={this.handleSubmit}>
                             <div >

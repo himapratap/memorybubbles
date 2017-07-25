@@ -7077,6 +7077,7 @@ module.exports = { debugTool: debugTool };
 /* 17 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 var g;
 
 // This works in non-strict mode
@@ -7098,6 +7099,29 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+=======
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
 
 
 /***/ }),
@@ -34816,7 +34840,10 @@ var Main = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { id: 'main' },
+<<<<<<< HEAD
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Link */], { to: '/' }),
+=======
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Link */],
                             { to: '/login' },
@@ -35824,7 +35851,10 @@ var Book = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_helpers__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_render_html__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_render_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_render_html__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Book__ = __webpack_require__(208);
+=======
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35838,7 +35868,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
 var Saved = function (_Component) {
     _inherits(Saved, _Component);
 
@@ -35907,6 +35940,7 @@ var Saved = function (_Component) {
                     'div',
                     { id: 'main' },
                     resultSection
+<<<<<<< HEAD
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'header',
@@ -36083,6 +36117,8 @@ var Saved = function (_Component) {
                             )
                         )
                     )
+=======
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
                 )
             );
         }
@@ -36151,11 +36187,21 @@ var Login = function (_Component) {
 
             event.preventDefault();
             __WEBPACK_IMPORTED_MODULE_1__util_helpers__["a" /* default */].checkLogin(this.state).then(function (result) {
+<<<<<<< HEAD
                 console.log('Login result : ' + result);
 
                 if (result.data == 'success') {
                     _this2.setState({ authenticated: true });
                     console.log('Login success');
+=======
+                console.log('Login result');
+                console.log(result);
+
+                if (result.status == 200) {
+                    _this2.setState({ authenticated: true });
+                    console.log('Login success');
+                    localStorage.setItem('name', result.data.firstname);
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
                 } else {
                     _this2.setState({ errMssg: 'Invalid Username or Password' });
                     console.log('Login failed');
@@ -36447,6 +36493,11 @@ var MemoryPage = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+<<<<<<< HEAD
+=======
+            var name = localStorage.name;
+            console.log(localStorage.name);
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'col-sm-12' },
@@ -36456,7 +36507,13 @@ var MemoryPage = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         null,
+<<<<<<< HEAD
                         'New Memory'
+=======
+                        'Hi ',
+                        name,
+                        ' !!!'
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -61555,8 +61612,13 @@ exports.default = valueEqual;
 /* 469 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
+=======
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+>>>>>>> c1a4a5e9935b95565e14ab69f2d95101ed1d4af7
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
