@@ -40,7 +40,7 @@ class MemoryPage extends Component {
 
     render() {
         const name = localStorage.name;
-        console.log(localStorage.name);
+        console.log(localStorage);
         return (
             <div className="col-sm-12">
                      <div>
