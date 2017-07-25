@@ -35676,37 +35676,12 @@ var Home = function (_React$Component) {
                         'div',
                         { id: 'polina' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h1',
-                            null,
-                            'MemoryStax'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'How do you store and share your memories?'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'Write statuses, upload images, decorate with emojis.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'All in your own private digital space.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'Share the information you want to share!'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
                             { to: '/login' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'button',
-                                { type: 'submit', className: 'special' },
-                                'Get Started'
+                                'h1',
+                                { id: 'logo' },
+                                'MemorySTACK'
                             )
                         )
                     )
@@ -35721,6 +35696,12 @@ var Home = function (_React$Component) {
 ;
 
 /* harmony default export */ __webpack_exports__["a"] = (Home);
+
+{/*<p>Write statuses, upload images, decorate with emojis.</p>
+                           <p>All in your own private digital space.</p>
+                           <p>Share the information you want to share!</p>*/}
+
+{/*<button type="submit" className="special">Get Started</button>*/}
 
 /***/ }),
 /* 208 */

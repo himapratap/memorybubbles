@@ -27,13 +27,8 @@ class Home extends React.Component {
                         <source src={this.state.videoWebURL} type="video/webm" />
                     </video>
                     <div id="polina">
-                        <h1>MemoryStax</h1>
-                        <p>How do you store and share your memories?</p>
-                        <p>Write statuses, upload images, decorate with emojis.</p>
-                        <p>All in your own private digital space.</p>
-                        <p>Share the information you want to share!</p>
                         <Link to="/login">
-                        <button type="submit" className="special">Get Started</button>
+                        <h1 id="logo">MemorySTACK</h1>
                         </Link>
                     </div>
                 </div>
@@ -44,3 +39,8 @@ class Home extends React.Component {
 
 export default Home;
 
+{/*<p>Write statuses, upload images, decorate with emojis.</p>
+                        <p>All in your own private digital space.</p>
+                        <p>Share the information you want to share!</p>*/}
+                        
+{/*<button type="submit" className="special">Get Started</button>*/}
