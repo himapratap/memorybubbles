@@ -12,6 +12,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		background-size: cover;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -179,7 +180,7 @@
 
 		}
 
-	a {
+	a{
 		-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -189,7 +190,7 @@
 		text-decoration: none;
 	}
 
-		a:hover {
+		a:hover{
 			border-bottom-color: transparent;
 			color: #34a58e !important;
 		}
@@ -1377,7 +1378,7 @@
 /* Header */
 
 	body {
-		padding: 0 0 4em 0;
+		padding:0;
 	}
 
 	#header {
@@ -1994,6 +1995,10 @@
     border-right: none;
     border-left: none;
     position: relative;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+
 
 
 }
@@ -2013,6 +2018,7 @@
     width: 100%;
     overflow: hidden;
     background: #000;
+
 }
 .video-container .poster img {
     /*width: 100%;
@@ -2050,6 +2056,7 @@
   top: 0;
   left: 0;
   right: 0;
+  text-align: center;
  
 }
 h1 {
@@ -2061,10 +2068,10 @@ h1 {
 }
 #polina button { 
   display: block;
-  width: 80%;
+  width: 100%;
   padding: .4rem;
   border: none; 
-  margin: 1rem auto; 
+  margin:auto; 
   font-size: 1.3rem;
   background: rgba(255,255,255,0.23);
   color: #fff;
@@ -2073,7 +2080,7 @@ h1 {
   -webkit-transition: .3s background;
   transition: .3s background;
 }
-#polina button:hover { 
+#polina button:hover{ 
    background: rgba(0,0,0,0.5);
 }
 
@@ -2085,11 +2092,18 @@ a {
   padding: .5rem;
   -webkit-transition: .6s background;
   transition: .6s background; 
+  /*width: 50%;*/
+  /*margin: auto;*/
+  /*text-align: center;*/
 }
 a:hover{
   background:rgba(0,0,0,0.9);
 }
 
+.mid-button{
+	width: 50%;
+	/*margin: auto;*/
+}
 
 
 

@@ -57,26 +57,37 @@ class Login extends Component {
         }
 
         return (
-            <div>
-                <div>
-                    <h1>Login</h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+          
+            <div className="container">
+                    <div className="row">
+                        <div className="col-md-4">
+
                         </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                        <div className="col-md-4">
+                                <h1>Login</h1>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="form-group">
+                                        <label>Email</label>
+                                        <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Password</label>
+                                        <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                                    </div>
+                                    <button type="submit" className="btn btn-default">Submit</button>
+                                    <div>{this.state.errMssg}</div>
+                                </form>
+                                <p>Need an account?
+                                    <a href="/signup">Signup</a>
+                                </p>
                         </div>
-                        <button type="submit" className="btn btn-default">Submit</button>
-                        <div>{this.state.errMssg}</div>
-                    </form>
-                    <p>Need an account?
-                        <a href="/signup">Signup</a>
-                    </p>
+                        <div className="col-md-4">
+                        </div>
+                        
+                    </div>
                 </div>
-            </div>
+           
+
         )
     }
 

@@ -47,7 +47,8 @@ module.exports.getUserByEmail = function(email, callback) {
         email: email
     };
     User.findOne(query, callback);
-    console.log("did not find")
+    console.log(email, callback);
+    console.log("did not find");
 }
 
 module.exports.getUserById = function(id, callback) {
