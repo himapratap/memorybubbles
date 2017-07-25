@@ -30,11 +30,12 @@ class Login extends Component {
             console.log(`Login result`);
             console.log(result);
 
-            if (result.status == 200) {
+            if (result.data != 'invalid') {
                 this.setState({authenticated: true});
                 console.log(`Login success`);
-                localStorage.setItem('name',this.state.email);
-                // console.log(result);
+                localStorage.setItem('name',result.data.firstname);
+                localStorage.setItem('userId',result.data._id);
+
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
                 console.log(`Login failed`);

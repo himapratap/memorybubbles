@@ -16,7 +16,7 @@ const helpers = {
 
     getAllMemories() {
         console.log('Getting memories in db');
-        return axios.get('/api');
+        return axios.get('/api/'+localStorage.userId);
     },
 
     deleteMemory(id) {
