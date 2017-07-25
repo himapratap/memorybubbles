@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import helpers from '../../util/helpers'
+import helpers from '../../util/helpers';
+import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
+
 
 class Signup extends Component {
     constructor(props) {
@@ -34,31 +36,37 @@ class Signup extends Component {
     }
     render() {
         return (
-            <div >
-                <h2>Register</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Last Name</label>
-                        <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname"  onChange={this.handleChange} required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
-                    </div>
-                    <div className="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" className="form-control" placeholder="Password" name="password2" id="password2"  onChange={this.handleChange} required/>
-                    </div>
-                    <button type="submit" className="btn btn-default">Submit</button>
-                </form>
+            <div className="container">
+                <div className="row login-page">
+                    <h2>Register</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Last Name</label>
+                            <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname"  onChange={this.handleChange} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Email</label>
+                            <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" className="form-control" placeholder="Password" name="password2" id="password2"  onChange={this.handleChange} required/>
+                        </div>
+                        <Link to="/login">
+                            <button type="submit">
+                                Submit
+                            </button>
+                        </Link>
+                    </form>
+                </div>
             </div>
         )
     }

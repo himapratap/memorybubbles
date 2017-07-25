@@ -62,12 +62,12 @@ class Login extends Component {
         return (
           
             <div className="container">
-                    <div className="row">
+                    <div className="row login-page">
                         <div className="col-md-4">
 
                         </div>
                         <div className="col-md-4">
-                                <h1>Login</h1>
+                                <h1 className="">Login</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label>Email</label>
@@ -77,11 +77,15 @@ class Login extends Component {
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
                                     </div>
-                                    <button type="submit" className="btn btn-default">Submit</button>
+                                    <button type="submit">Submit</button>
                                     <div>{this.state.errMssg}</div>
                                 </form>
                                 <p>Need an account?
-                                    <a href="/signup">Signup</a>
+                                    <Link to="/signup">
+                                            <button type="submit">
+                                                Sign Up
+                                            </button>
+                                    </Link>
                                 </p>
                         </div>
                         <div className="col-md-4">
