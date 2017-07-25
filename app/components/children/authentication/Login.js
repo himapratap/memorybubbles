@@ -61,12 +61,21 @@ class Login extends Component {
 
         return (
           
-            <div className="container">
+            <div className="">
                     <div className="row">
-                        <div className="col-md-4">
-
+                        <div className="col-md-2">
                         </div>
                         <div className="col-md-4">
+                            <h1 id="logo">MemorySTACK</h1>
+                        </div>
+                        <div className="col-md-4">
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">
+                        </div>
+                        <div className="col-md-4">
+                        
                                 <h1>Login</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
@@ -81,10 +90,7 @@ class Login extends Component {
                                     <div>{this.state.errMssg}</div>
                                 </form>
                                 <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
-                                    </Link></p>
-                                    
-                                
-                                  
+                                    </Link></p>     
                         </div>
                         <div className="col-md-4">
                         </div>
