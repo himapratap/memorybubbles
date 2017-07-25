@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-
+import Querystring from 'queryString'
 
 const helpers = {
 
@@ -22,7 +21,7 @@ const helpers = {
 
     deleteMemory(id) {
         console.log(`Deleting memory in db`);
-        return axios.delete('/api/'+id);
+        return axios.delete('/api/' + id);
     },
 
     saveUserInDB(user) {
@@ -33,11 +32,10 @@ const helpers = {
     },
 
     checkLogin(login) {
-        console.log('Login Attempt Helper');
-        console.log(login);
-        return axios.post('/api/login')
-    },
-
+        console.log('Sending login form to backend');
+        var data = Querystring.stringify({"email": login.email, "password": login.password});
+        return axios.post('/auth/login', data)
+    }
 }
 
 export default helpers;

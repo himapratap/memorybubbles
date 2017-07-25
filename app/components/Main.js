@@ -9,13 +9,16 @@ import Saved from './children/Saved';
 import Login from './children/authentication/Login';
 import Signup from './children/authentication/Signup';
 
-import {Link, Route, BrowserRouter as Router} from 'react-router-dom';
+import {Link,Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
+import { browserHistory } from 'react-router'
+
 import helpers from './util/helpers';
 
 class Main extends Component {
     constructor(props) {
         super(props);
-    }
+       }
+
     // The moment the page renders get the History
     componentDidMount() {}
 
@@ -24,10 +27,6 @@ class Main extends Component {
         console.log(" Save user called");
         console.log(event);
         helpers.saveUserInDB(user);
-    }
-
-    login(login) {
-        helpers.checkLogin(login);
     }
 
     render() {
@@ -72,15 +71,9 @@ class Main extends Component {
                     {/*Component Routes*/}
                     <div>
                         {/*HomePage*/}
-                       <Route exact path="/" component={() => <Home/>}/>
-
-                        {/*Login*/}
-                        <Route exact path="/login" component={() => <Login login = {this.login}/>}/> 
-
-                        {/*Sign Up */}
-                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/>
-
-                        {/*All memories*/} 
+                        <Route exact path="/" component={() => <Home/>}/> {/*Login*/}
+                        <Route exact path="/login" component={() => <Login/>}/> {/*Sign Up */}
+                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/> {/*All memories*/}
                         <Route exact path="/saved" component={() => <Saved/>}/>
 
                         <Route exact path="/new" component={() => <Book/>}></Route>
@@ -89,5 +82,7 @@ class Main extends Component {
             </Router>
         )
     }
+
 }
+
 export default Main;
