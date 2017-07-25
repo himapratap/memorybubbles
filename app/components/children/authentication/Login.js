@@ -35,6 +35,7 @@ class Login extends Component {
                 console.log(`Login success`);
                 localStorage.setItem('name',result.data.firstname);
                 localStorage.setItem('userId',result.data._id);
+                console.log(localStorage);
 
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
@@ -54,7 +55,7 @@ class Login extends Component {
         if (this.state.authenticated) {
             console.log('im authenticated');
             console.log(this.state);
-            localStorage.setItem('name',this.state);
+            // localStorage.setItem('name',this.state);
             return (<Redirect to={from}/>)
         }
 
