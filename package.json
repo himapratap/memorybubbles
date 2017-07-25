@@ -17,6 +17,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "draft-js": "^0.10.1",
     "draftjs-to-html": "^0.7.4",
     "draftjs-to-markdown": "^0.4.3",
