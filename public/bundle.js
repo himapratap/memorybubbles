@@ -35983,11 +35983,13 @@ var Login = function (_Component) {
 
             event.preventDefault();
             __WEBPACK_IMPORTED_MODULE_1__util_helpers__["a" /* default */].checkLogin(this.state).then(function (result) {
-                console.log('Login result : ' + result);
+                console.log('Login result');
+                console.log(result);
 
-                if (result.data == 'success') {
+                if (result.status == 200) {
                     _this2.setState({ authenticated: true });
                     console.log('Login success');
+                    localStorage.setItem('name', result.data.firstname);
                 } else {
                     _this2.setState({ errMssg: 'Invalid Username or Password' });
                     console.log('Login failed');
@@ -36285,6 +36287,8 @@ var MemoryPage = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var name = localStorage.name;
+            console.log(localStorage.name);
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'col-sm-12' },
@@ -36294,7 +36298,9 @@ var MemoryPage = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         null,
-                        'New Memory'
+                        'Hi ',
+                        name,
+                        ' !!!'
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
