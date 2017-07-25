@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var UserSchema = new Schema({
-    
+
     id: {
         type: Number
     },
@@ -25,8 +25,8 @@ var UserSchema = new Schema({
         type: String,
         required: true
     },
-    last_login: { 
-        type: Date, default: Date.now 
+    last_login: {
+        type: Date, default: Date.now
     }
 });
 
@@ -54,7 +54,10 @@ module.exports.getUserById = function(id, callback){
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
+    console.log(candidatePassword);
     bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+        console.log(`ismatch`);
+        console.log(isMatch);
         if(err) throw err;
         callback(null, isMatch);
     });

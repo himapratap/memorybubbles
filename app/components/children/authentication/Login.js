@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import helpers from '../../util/helpers'
+import helpers from '../../util/helpers';
+import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            authenticated: false,
+            errMssg: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,18 +21,38 @@ class Login extends Component {
     handleChange(event) {
         let newState = {};
         newState[event.target.id] = event.target.value;
-        console.log("targets: " + newState)
-        console.log("target fields: " + event.target.value)
         this.setState(newState);
 
     }
     handleSubmit(event) {
         event.preventDefault();
-        this.props.login(this.state);
-        this.setState({})
+        helpers.checkLogin(this.state).then((result) => {
+            console.log(`Login result : ${result}`);
+
+            if (result.data == 'success') {
+                this.setState({authenticated: true});
+                console.log(`Login success`);
+
+            } else {
+                this.setState({errMssg: 'Invalid Username or Password'});
+                console.log(`Login failed`);
+
+            }
+        });
     }
 
     render() {
+        const {from} = {
+            from: {
+                pathname: '/new'
+            }
+        }
+
+        if (this.state.authenticated) {
+            console.log('im authenticated');
+            return (<Redirect to={from}/>)
+        }
+
         return (
             <div>
                 <div>
@@ -44,17 +67,15 @@ class Login extends Component {
                             <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>
+                        <div>{this.state.errMssg}</div>
                     </form>
-                    <p>Need an account? <a href="/signup">Signup</a></p>
+                    <p>Need an account?
+                        <a href="/signup">Signup</a>
+                    </p>
                 </div>
             </div>
         )
     }
+
 }
 export default Login;
-
-
-
-
-
-        
