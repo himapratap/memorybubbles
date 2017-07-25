@@ -13,7 +13,8 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var cookieSession = require('cookie-session');
+var env = require('dotenv').load();
 // Require Models
 var Memory = require("./models/Memory");
 var User = require("./models/User");
@@ -181,10 +182,28 @@ app.post("/api/user/save", function(req, res) {
 
 });
 
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.getUserById(id, function(err, user) {
+    done(err, user);
+  });
+});
+
+
 // ***&&*** Passport Login Code
-passport.use(new LocalStrategy(
-  function(email, password, done) {
+passport.use('local-signin',new LocalStrategy({
+  // by default, local strategy uses username and password, we will override with email
+            usernameField: 'email',
+            passwordField: 'password',
+            passReqToCallback: true // allows us to pass back the entire request to the callback
+},
+  function(req,email, password, done) {
     email = login.email
+
    User.getUserByEmail(email, function(err, user){
     if(err) throw err;
     if(!user){
@@ -202,18 +221,17 @@ passport.use(new LocalStrategy(
    });
   }));
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
 
-passport.deserializeUser(function(id, done) {
-  User.getUserById(id, function(err, user) {
-    done(err, user);
-  });
-});
+
+
 
 // Login
-app.post("/api/login", passport.authenticate('local', {successRedirect:'/', failureRedirect:'/',failureFlash: true}),
+// app.post("/api/login", passport.authenticate('local', {successRedirect:'/', failureRedirect:'/',failureFlash: true}),
+//   function(req, res) {
+//     res.redirect('/');
+//   });
+// Login
+app.post("/api/login", passport.authenticate('local-signin', {successRedirect:'/', failureRedirect:'/',failureFlash: true}),
   function(req, res) {
     res.redirect('/');
   });
