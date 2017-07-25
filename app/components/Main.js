@@ -35,9 +35,9 @@ class Main extends Component {
                 <div id="wrapper">
                     <div id="main">
 
-                        {/*Homepage
+                        {/*Homepage*/}
                         <Link to="/">
-                        </Link>*/}
+                        </Link>
 
                         {/*Login*/}
                         <Link to="/login">
