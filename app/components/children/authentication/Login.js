@@ -77,12 +77,15 @@ class Login extends Component {
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
                                     </div>
-                                    <button type="submit" className="btn btn-default">Submit</button>
+                                    <button type="submit" className="special">Submit</button>
                                     <div>{this.state.errMssg}</div>
                                 </form>
-                                <p>Need an account?
-                                    <a href="/signup">Signup</a>
-                                </p>
+                                <p>Need an account?</p>
+                                    
+                                
+                                <Link to="/signup">
+                                    <button type="submit" >Sign Up</button>
+                                    </Link>  
                         </div>
                         <div className="col-md-4">
                         </div>
