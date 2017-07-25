@@ -4,13 +4,18 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+
+var passport   = require('passport')
+var session    = require('express-session')
+var path       = require("path")
+
 // Require Article Schema
 var Memory = require("./models/Memory");
 
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 3000;
 
 console.log('running server');
 // Run Morgan for Logging
@@ -39,7 +44,7 @@ db.on("error", function(err) {
     console.log("Mongoose Error: ", err);
 });
 
-db.once("open", function() {
+db.once("openUri", function() {
     console.log("Mongoose connection successful.");
 });
 
