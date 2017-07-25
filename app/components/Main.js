@@ -32,8 +32,8 @@ class Main extends Component {
     render() {
         return (
             <Router>
-                <div id="wrapper">
-                    <div id="main">
+                <div id="">
+                    <div id="">
 
                         {/*Homepage
                         <Link to="/">
@@ -75,7 +75,6 @@ class Main extends Component {
                         <Route exact path="/login" component={() => <Login/>}/> {/*Sign Up */}
                         <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/> {/*All memories*/}
                         <Route exact path="/saved" component={() => <Saved/>}/>
-
                         <Route exact path="/new" component={() => <Book/>}></Route>
                     </div>
                 </div>
