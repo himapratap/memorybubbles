@@ -33,40 +33,7 @@ class Main extends Component {
         return (
             <Router>
                 <div id="">
-                    <div id="">
-
-                        {/*Homepage
-                        <Link to="/">
-                        </Link>*/}
-
-                        {/*Login*/}
-                        <Link to="/login">
-                            <button type="submit">
-                                Login Page
-                            </button>
-                        </Link>
-
-                        {/*Sign Up*/}
-                        <Link to="/signup">
-                            <button type="submit">
-                                Signup Page
-                            </button>
-                        </Link>
-
-                        {/*Profile Page (All Memories)*/}
-                        <Link to="/saved">
-                            <button type="submit">
-                                All Memories
-                            </button>
-                        </Link>
-
-                        {/*Add a new memory*/}
-                        <Link to="/new">
-                            <button type="submit">
-                                New Memory
-                            </button>
-                        </Link>
-                    </div>
+                
 
                     {/*Component Routes*/}
                     <div>

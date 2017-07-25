@@ -33,7 +33,8 @@ class Login extends Component {
             if (result.status == 200) {
                 this.setState({authenticated: true});
                 console.log(`Login success`);
-                localStorage.setItem('name',result.data.firstname);
+                localStorage.setItem('name',this.state.email);
+                // console.log(result);
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
                 console.log(`Login failed`);
@@ -51,6 +52,8 @@ class Login extends Component {
 
         if (this.state.authenticated) {
             console.log('im authenticated');
+            console.log(this.state);
+            localStorage.setItem('name',this.state);
             return (<Redirect to={from}/>)
         }
 
