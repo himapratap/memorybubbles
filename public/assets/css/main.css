@@ -1998,14 +1998,13 @@
     height: 100%;
     width: 100%;
     margin-bottom: 0;
-
-
-
 }
+
 .no-video .video-container video,
 .touch .video-container video {
     display: none;
 }
+
 .no-video .video-container .poster,
 .touch .video-container .poster {
     display: block !important;
@@ -2042,7 +2041,6 @@
 
 
 #polina { 
-  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-weight:100; 
   background: rgba(0,0,0,0.3);
   color: white;
@@ -2057,8 +2055,8 @@
   left: 0;
   right: 0;
   text-align: center;
- 
 }
+
 h1 {
   font-size: 3rem;
   text-transform: uppercase;
@@ -2067,24 +2065,24 @@ h1 {
   letter-spacing: .3rem;
 }
 #polina button { 
-  display: block;
-  width: 100%;
-  padding: .4rem;
-  border: none; 
-  margin:auto; 
-  font-size: 1.3rem;
-  background: rgba(255,255,255,0.23);
-  color: #fff;
-  border-radius: 3px; 
-  cursor: pointer;
-  -webkit-transition: .3s background;
-  transition: .3s background;
+  /*display: block;*/
+  /*width: 100%;*/
+  /*padding: .4rem;*/
+  /*border: none; */
+  /*margin:auto; */
+  /*font-size: 1.3rem;*/
+  /*background: rgba(255,255,255,0.23);*/
+  /*color: #fff;*/
+  /*border-radius: 3px; */
+  /*cursor: pointer;*/
+  /*-webkit-transition: .3s background;*/
+  /*transition: .3s background;*/
 }
 #polina button:hover{ 
-   background: rgba(0,0,0,0.5);
+   /*background: rgba(0,0,0,0.5);*/
 }
 
-a {
+/*a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
@@ -2092,13 +2090,11 @@ a {
   padding: .5rem;
   -webkit-transition: .6s background;
   transition: .6s background; 
-  /*width: 50%;*/
-  /*margin: auto;*/
-  /*text-align: center;*/
 }
+
 a:hover{
   background:rgba(0,0,0,0.9);
-}
+}*/
 
 .mid-button{
 	width: 50%;
