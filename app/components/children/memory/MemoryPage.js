@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TextEditor from './TextEditor';
+import { Redirect } from 'react-router-dom';
 
 class MemoryPage extends Component {
 
