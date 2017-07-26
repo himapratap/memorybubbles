@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
-<<<<<<< HEAD
+
 import helpers from '../../util/helpers';
 import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
-
-=======
-import helpers from '../../util/helpers'
-import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
->>>>>>> 42a153b23599ea0b58c96b077c095e6c79fa1224
 
 class Signup extends Component {
     constructor(props) {
@@ -43,10 +38,30 @@ class Signup extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">
+                        <div className="col-md-2">
+                        </div>
+                        <div className="col-md-4">
+                            <h1 id="logo">MemorySTACK</h1>
+                        </div>
+                        <div className="col-md-4">
+                        </div>
+                </div>
+                <div className="row signup-row">
+                        <div className="col-md-3">
+                        </div>
+                        <div className="col-md-2">
+                            <i className="fa fa-user-plus fa-5x" aria-hidden="true"></i>
+                        </div>
+                        <div className="col-md-4 signup-header-div">
+                            <h2 className="signup-header">Register for New Account</h2>
+                        </div>
+                        <div className="col-md-3">
+                        </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
                     </div>
-                    <div className="col-md-4">
-                        <h1>Register</h1>
+                    <div className="col-md-6">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label>First Name</label>
@@ -71,7 +86,7 @@ class Signup extends Component {
                             <button type="submit" className="">Submit</button>
                         </form>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                     </div>
                 </div>
             </div>
