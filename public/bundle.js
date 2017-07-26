@@ -35665,7 +35665,6 @@ var Home = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'video-container' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'filter' }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'video',
                         { loop: true, autoPlay: true, className: 'fillWidth' },
@@ -35683,7 +35682,10 @@ var Home = function (_React$Component) {
                                 { id: 'logo' },
                                 'MemorySTACK'
                             )
-                        )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'http://i.imgur.com/eEtcCfp.jpg', alt: 'undefined' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null)
                     )
                 )
             );
@@ -36652,25 +36654,25 @@ var TextEditor = function (_Component) {
             }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'demo-root' },
+                { 'class': 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { 'class': 'col-xs-3 col-sm-3 col-md-3 col-lg-3' }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'demo-editorSection' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_draft_wysiwyg__["Editor"], {
-                        wrapperClassName: 'demo-wrapper-wide',
-                        editorClassName: 'demo-editor',
-                        onEditorStateChange: this.onEditorStateChange.bind(this),
-                        toolbar: {
-                            options: ['history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'],
-                            inline: { inDropdown: true },
-                            list: { inDropdown: true },
-                            textAlign: { inDropdown: true },
-                            link: { inDropdown: true },
-                            history: { inDropdown: true },
-                            image: { uploadCallback: __WEBPACK_IMPORTED_MODULE_6__util_uploadImageCallBack__["a" /* default */] }
-                        } })
+                    { 'class': 'col-xs-3 col-sm-3 col-md-3 col-lg-3' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'demo-root' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'demo-editorSection' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_draft_wysiwyg__["Editor"], { wrapperClassName: 'demo-wrapper-wide', editorClassName: 'demo-editor', onEditorStateChange: this.onEditorStateChange.bind(this), toolbar: { options: ['history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'], inline: { inDropdown: true }, list: { inDropdown: true }, textAlign: { inDropdown: true }, link: { inDropdown: true }, history: { inDropdown: true }, image: { uploadCallback: __WEBPACK_IMPORTED_MODULE_6__util_uploadImageCallBack__["a" /* default */] } } }),
+                            ' '
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { dangerouslySetInnerHTML: { __html: this.state.html } })
+                    )
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { dangerouslySetInnerHTML: { __html: this.state.html } })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { 'class': 'col-xs-3 col-sm-3 col-md-3 col-lg-3' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { 'class': 'col-xs-3 col-sm-3 col-md-3 col-lg-3' })
             );
         }
     }]);

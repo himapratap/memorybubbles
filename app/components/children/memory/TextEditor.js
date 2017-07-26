@@ -65,52 +65,25 @@ console.log(editorContent);
 
         }
         return (
-            <div className="demo-root">
-                <div className="demo-editorSection">
-                  <Editor
-                             wrapperClassName="demo-wrapper-wide"
-                             editorClassName="demo-editor"
-                             onEditorStateChange={this.onEditorStateChange.bind(this)}
-                             toolbar={{
-                               options: ['history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'],
-                               inline: { inDropdown: true },
-                               list: { inDropdown: true },
-                               textAlign: { inDropdown: true },
-                               link: { inDropdown: true },
-                               history: { inDropdown: true },
-                               image: { uploadCallback: uploadImageCallBack }
-                             }}/>
-                    {/* <Editor wrapperClassName="demo-wrapper-wide"
-                        editorClassName="demo-editor"
-                        toolbarOnFocus
-                        onEditorStateChange={this.onEditorStateChange.bind(this)}
-                        toolbar={{
-                              inline: {
-                                  inDropdown: false
-                              },
-                              list: {
-                                  inDropdown: true
-                              },
-                              textAlign: {
-                                  inDropdown: true
-                              },
-                            link: {
-                                  inDropdown: true
-                              },
-                              history: {
-                                  inDropdown: true
-                              },
-                              image: {
-                                   uploadCallback: uploadImageCallBack
-                              }
-                          }}
-                          placeholder = "Start typing.."
-
-                         /> */}
-                </div>
-                     <div dangerouslySetInnerHTML={{__html: this.state.html}}></div>
-              {/*    <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
-            </div>
+          <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                  <div className="demo-root">
+                      <div className="demo-editorSection">
+                          <Editor wrapperClassName="demo-wrapper-wide" editorClassName="demo-editor" onEditorStateChange={this.onEditorStateChange.bind(this)} toolbar={{ options: [ 'history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'], inline: { inDropdown: true }, list: { inDropdown: true }, textAlign: { inDropdown: true }, link: { inDropdown: true }, history: { inDropdown: true }, image: { uploadCallback: uploadImageCallBack } }}/> {/*
+                          <Editor wrapperClassName="demo-wrapper-wide" editorClassName="demo-editor" toolbarOnFocus onEditorStateChange={this.onEditorStateChange.bind(this)} toolbar={{ inline: { inDropdown: false }, list: { inDropdown: true }, textAlign: { inDropdown: true }, link: { inDropdown: true }, history: { inDropdown: true }, image: { uploadCallback: uploadImageCallBack } }} placeholder="Start typing.." /> */}
+                      </div>
+                      <div dangerouslySetInnerHTML={{__html: this.state.html}}></div>
+                      {/*
+                      <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
+                  </div>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              </div>
+          </div>
         );
     }
 
