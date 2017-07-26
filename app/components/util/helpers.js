@@ -33,6 +33,7 @@ const helpers = {
 
     checkLogin(login) {
         console.log('Sending login form to backend');
+        console.log(login);
         var data = Querystring.stringify({"email": login.email, "password": login.password});
         return axios.post('/auth/login', data)
     }

@@ -42,7 +42,7 @@ class TextEditor extends Component {
     }
 
     onEditorStateChange(editorContent) {
-console.log(editorContent);
+        console.log(editorContent);
         this.setState({editorContents : editorContent});
         // console.log('Editor current contents');
         // console.log(this.state.editorContents.getCurrentContent());
@@ -108,8 +108,7 @@ console.log(editorContent);
 
                          /> */}
                 </div>
-                     <div dangerouslySetInnerHTML={{__html: this.state.html}}></div>
-              {/*    <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
+               {/*    <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
             </div>
         );
     }
