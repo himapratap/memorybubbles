@@ -8,11 +8,17 @@ var MemorySchema = new Schema({
     data: {
         type: String
     },
-     
+    date:{
+        type: Date
+    },
+
     shared: {
         type: Boolean,
         default: false
-    }
+    },
+    userId: {
+        type: String
+    },
 });
 
 var Memory = mongoose.model("Memory", MemorySchema);

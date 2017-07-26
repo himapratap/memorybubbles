@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import editor  from '../../../../assets/css/editor.css'
+import editor from '../../../../assets/css/editor.css'
 import draftToHtml from 'draftjs-to-html';
-import { convertToRaw } from 'draft-js';
+import {convertToRaw} from 'draft-js';
+
 import draftToMarkdown from 'draftjs-to-markdown';
-import { Editor } from 'react-draft-wysiwyg';
+import {Editor} from 'react-draft-wysiwyg';
 import uploadImageCallBack from '../../util/uploadImageCallBack';
 import sampleEditorContent from '../../util/sampleEditorContent';
 import bold from '../../../images/demo/bold.gif';
@@ -27,44 +28,88 @@ import image from '../../../images/demo/image.gif';
 import undo from '../../../images/demo/undo.gif';
 import redo from '../../../images/demo/redo.gif';
 
+import renderHTML from 'react-render-html';
+
 class TextEditor extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            editorContents: []
+            editorContents:'',
+            html :''
         };
+
     }
 
-    onEditorStateChange(index, editorContent) {
-        let editorContents = this.state.editorContents;
-        editorContents[index] = editorContent;
-        editorContents = [...editorContents];
-        this.setState({editorContents});
+    onEditorStateChange(editorContent) {
+console.log(editorContent);
+        this.setState({editorContents : editorContent});
+        // console.log('Editor current contents');
+        // console.log(this.state.editorContents.getCurrentContent());
+        // console.log('Editor contents plain text');
+        // console.log(this.state.editorContents.getCurrentContent().getPlainText());
+        //
+        var html = draftToHtml(convertToRaw(this.state.editorContents.getCurrentContent()));
+        console.log(html);
+         //  console.log(html);
+        this.setState({html :html})
+        //
+        this.props.onChangeText(html);
     };
 
     render() {
-        const {editorContents} = this.state;
+      //  const {editorContents} = this.state;
+        var renderhtml = '';
+        if(this.state.html != ''){
+          this.renderhtml = renderHTML(this.state.html);
 
+        }
         return (
             <div className="demo-root">
-              {/* <div className="demo-label">
-                Editor with similar options grouped in drop-down.
-              </div> */}
-              <div className="demo-editorSection">
-                <Editor
-                  wrapperClassName="demo-wrapper-wide"
-                  editorClassName="demo-editor"
-                  toolbar={{
-                    inline: { inDropdown: true },
-                    list: { inDropdown: true },
-                    textAlign: { inDropdown: true },
-                    link: { inDropdown: true },
-                    history: { inDropdown: true },
-                    image: { uploadCallback: uploadImageCallBack }
-                  }}
-                />
-              </div>
+                <div className="demo-editorSection">
+                  <Editor
+                             wrapperClassName="demo-wrapper-wide"
+                             editorClassName="demo-editor"
+                             onEditorStateChange={this.onEditorStateChange.bind(this)}
+                             toolbar={{
+                               options: ['history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'],
+                               inline: { inDropdown: true },
+                               list: { inDropdown: true },
+                               textAlign: { inDropdown: true },
+                               link: { inDropdown: true },
+                               history: { inDropdown: true },
+                               image: { uploadCallback: uploadImageCallBack }
+                             }}/>
+                    {/* <Editor wrapperClassName="demo-wrapper-wide"
+                        editorClassName="demo-editor"
+                        toolbarOnFocus
+                        onEditorStateChange={this.onEditorStateChange.bind(this)}
+                        toolbar={{
+                              inline: {
+                                  inDropdown: false
+                              },
+                              list: {
+                                  inDropdown: true
+                              },
+                              textAlign: {
+                                  inDropdown: true
+                              },
+                            link: {
+                                  inDropdown: true
+                              },
+                              history: {
+                                  inDropdown: true
+                              },
+                              image: {
+                                   uploadCallback: uploadImageCallBack
+                              }
+                          }}
+                          placeholder = "Start typing.."
+
+                         /> */}
+                </div>
+                     <div dangerouslySetInnerHTML={{__html: this.state.html}}></div>
+              {/*    <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
             </div>
         );
     }

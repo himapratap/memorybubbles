@@ -12,6 +12,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		background-size: cover;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -179,7 +180,7 @@
 
 		}
 
-	a {
+	a{
 		-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -189,7 +190,7 @@
 		text-decoration: none;
 	}
 
-		a:hover {
+		a:hover{
 			border-bottom-color: transparent;
 			color: #34a58e !important;
 		}
@@ -1377,7 +1378,7 @@
 /* Header */
 
 	body {
-		padding: 0 0 4em 0;
+		padding:0;
 	}
 
 	#header {
@@ -1989,3 +1990,142 @@
 		#footer .copyright a {
 			color: inherit;
 		}
+
+/*Extra Styling*/
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+
+}
+.video-container .poster img {
+    /*width: 100%;
+    bottom: 0;
+    position: absolute;*/
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+
+#polina { 
+  /*font-weight:100; */
+  background: rgba(0,0,0,0.3);
+  /*background-color: black;*/
+  color: white;
+  /*padding: 6rem;*/
+  width: 70%;
+  margin:auto;
+  /*margin-top: 10%;*/
+  /*float: right;*/
+  /*font-size: 1.2rem;*/
+  position: absolute;
+  padding-top: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+/*h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+  letter-spacing: .3rem;
+}
+*/
+#polina button { 
+  /*display: block;*/
+  /*width: 100%;*/
+  /*padding: .4rem;*/
+  /*border: none; */
+  /*margin:auto; */
+  /*font-size: 1.3rem;*/
+  background: rgba(255,255,255,0.23);
+  /*color: #fff;*/
+  /*border-radius: 3px; */
+  /*cursor: pointer;*/
+  /*-webkit-transition: .3s background;*/
+  /*transition: .3s background;*/
+}
+#polina button:hover{ 
+   /*background: rgba(0,0,0,0.5);*/
+}
+
+/*a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  -webkit-transition: .6s background;
+  transition: .6s background; 
+}
+
+a:hover{
+  background:rgba(0,0,0,0.9);
+}*/
+
+.mid-button{
+	width: 50%;
+	/*margin: auto;*/
+}
+
+#logo {
+	font-family: 'Mr Dafoe', cursive;
+	font-size: 150px;
+	font-weight: 200%;
+	color: #34a58e;
+	text-transform: lowercase;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	text-decoration: none;
+
+}
+
+#logo:a {
+	text-decoration: none;
+}
+
+#landingfont {
+	color: #34a58e;
+	background-color: black;
+}
+
+		

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import  TextEditor  from './TextEditor';
+import TextEditor from './TextEditor';
 
 class MemoryPage extends Component {
 
@@ -8,9 +8,11 @@ class MemoryPage extends Component {
         this.state = {
             title: "",
             data: "",
-         };
+            userId : localStorage.userId
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onChangeText = this.onChangeText.bind(this);
     }
 
     handleInputChange(event) {
@@ -30,15 +32,20 @@ class MemoryPage extends Component {
         this.setState({});
     }
 
+    onChangeText(contents) {
+        console.log('MemoryPage : onChangeText got the contents');
+        console.log(contents);
+        this.setState({data: contents});
+    }
+
     render() {
+        const name = localStorage.name;
+        console.log(localStorage);
         return (
             <div className="col-sm-12">
-                <div>
-                    <div>
-                        <h3>
-                            <i></i>
-                            New Memory</h3>
-                    </div>
+                     <div>
+                        <h3>Hi {name} !!!</h3>
+                     </div>
                     <div>
                         <form onSubmit={this.handleSubmit}>
                             <div >
@@ -47,11 +54,11 @@ class MemoryPage extends Component {
                             </div>
 
                             <div>
-                                 {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
-                                 <TextEditor/>
-                             </div>
+                                {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
+                                <TextEditor onChangeText={this.onChangeText}/>
+                            </div>
 
-                          <button type="submit" id="save">
+                            <button type="submit" id="save">
                                 <span ></span>
                                 Save</button>
                             <button type="submit" id="clearButton">
@@ -60,8 +67,7 @@ class MemoryPage extends Component {
                         </form>
                     </div>
                 </div>
-            </div>
-        )
+         )
     }
 }
 
