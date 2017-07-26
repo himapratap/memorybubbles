@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+
 // ***&&&*** Passport video dependencies
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -14,7 +15,7 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-// Require Models
+
 var Memory = require("./models/Memory");
 var User = require("./models/User");
 
@@ -83,7 +84,7 @@ db.on("error", function(err) {
     console.log("Mongoose Error: ", err);
 });
 
-db.once("open", function() {
+db.once("openUri", function() {
     console.log("Mongoose connection successful.");
 });
 

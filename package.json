@@ -38,6 +38,7 @@
     "react-draft-wysiwyg": "^1.10.7",
     "react-render-html": "^0.5.0",
     "react-router-dom": "^4.1.1",
+    "react-time": "^4.3.0",
     "url-loader": "^0.5.9"
   },
   "devDependencies": {

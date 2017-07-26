@@ -5,6 +5,7 @@ import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
 class Signup extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             firstname: "",
             lastname: "",
@@ -35,6 +36,7 @@ class Signup extends Component {
     }
     render() {
         return (
+
             <div className="container">
                 <div className="row">
                     <div className="col-md-4"></div>
@@ -67,6 +69,7 @@ class Signup extends Component {
                     <div className="col-md-4"></div>
                 </div>
             </div>
+
         )
     }
 }
