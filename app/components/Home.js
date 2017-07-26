@@ -4,7 +4,7 @@ import {Link,Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
 // import Memories from './memory/Memories';
 // import MemoryPage from './memory/MemoryPage';
 import helpers from './util/helpers';
-
+import './home.scss'
 
 class Home extends React.Component {
     constructor (props) {

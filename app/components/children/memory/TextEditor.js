@@ -78,7 +78,19 @@ class TextEditor extends Component {
                                textAlign: { inDropdown: true },
                                link: { inDropdown: true },
                                history: { inDropdown: true },
-                               image: { uploadCallback: uploadImageCallBack }
+                               image: 
+                               { uploadCallback: uploadImageCallBack,
+                               defaultSize: {
+                                  margin: 'auto',
+                                  height: '100%',
+                                  backgroundposition: 'center',
+                                  position: 'absolute',
+                                  border: '0',
+                                  backgroundsize: 'cover',
+                                  top: '0',
+                                  width: '100%'
+                                } 
+                               }
                              }}/>
                     {/* <Editor wrapperClassName="demo-wrapper-wide"
                         editorClassName="demo-editor"
