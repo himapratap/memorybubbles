@@ -25,7 +25,7 @@
     "draftjs-to-markdown": "^0.4.3",
     "express": "^4.14.0",
     "express-session": "^1.15.4",
-   "express-validator": "^3.2.1",
+    "express-validator": "^3.2.1",
     "file-loader": "^0.11.2",
     "mongoose": "^4.5.1",
     "morgan": "^1.7.0",
@@ -38,6 +38,7 @@
     "react-draft-wysiwyg": "^1.10.7",
     "react-render-html": "^0.5.0",
     "react-router-dom": "^4.1.1",
+    "react-time": "^4.3.0",
     "url-loader": "^0.5.9"
   },
   "devDependencies": {

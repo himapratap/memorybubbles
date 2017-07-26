@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import Time from 'react-time';
 import TextEditor from './TextEditor';
+import { Redirect } from 'react-router-dom';
 
 class MemoryPage extends Component {
 
@@ -42,7 +44,11 @@ class MemoryPage extends Component {
     render() {
         const name = localStorage.name;
         console.log(localStorage);
+            let now = new Date();
+            let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
+            this.setState({date: now});
         return (
+          
             <div className="col-sm-12">
                      <div>
                         <h3>Hi {name} !!!</h3>
@@ -53,13 +59,17 @@ class MemoryPage extends Component {
                                 <label htmlFor="title">Title</label>
                                 <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
                             </div>
-
+                            
                             <div className="row">
+                            
                             <div className="col-md-2 col-md-offset-1">
                                 <strong>date:</strong>
                             </div>
                             <div className ="col-md-2">
-                                <input type="date" name="date" id="date" value={this.state.date} onChange={this.handleInputChange}/>
+                                
+                            
+                                <p> <Time value={now}  format="MM/DD/YYYY" /></p>   
+                           
                              </div>
 
                             </div>
