@@ -2128,4 +2128,11 @@ a:hover{
 	background-color: black;
 }
 
+#profilelogo {
+	color: #34a58e;
+	font-family: 'Mr Dafoe', cursive;
+	font-size: 55px;
+	text-transform: lowercase;
+	padding-left: 5px;
+}
 		

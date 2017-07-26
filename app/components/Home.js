@@ -30,7 +30,6 @@ class Home extends React.Component {
                         <Link to="/login">
                         <h1 id="logo">MemorySTACK</h1>
                         </Link>
-                        <p></p><img src="http://i.imgur.com/eEtcCfp.jpg" alt="undefined"/><p></p>
                     </div>
                 </div>
             </div>

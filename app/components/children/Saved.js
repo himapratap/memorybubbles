@@ -54,9 +54,10 @@ class Saved extends Component {
                 </div>
                 <header id="header">
                     <h1>
-                        <strong>{localStorage.name}'s Memory Bubbles
+                        <strong>{localStorage.name}'s 
                         </strong>
                     </h1>
+                    <p id="profilelogo">memorystack</p>
                     <nav>
 
                         <ul>
@@ -69,62 +70,6 @@ class Saved extends Component {
                         </ul>
                     </nav>
                 </header>
-                <footer id="footer" className="panel">
-                    <div className="inner split">
-                        <div>
-                            <section>
-                                <h2>My Social Media</h2>
-                                <ul className="icons">
-                                    <li>
-                                        <a href="#" className="icon fa-twitter">
-                                            <span className="label">Twitter</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="icon fa-facebook">
-                                            <span className="label">Facebook</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="icon fa-instagram">
-                                            <span className="label">Instagram</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="icon fa-github">
-                                            <span className="label">GitHub</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="icon fa-dribbble">
-                                            <span className="label">Dribbble</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="icon fa-linkedin">
-                                            <span className="label">LinkedIn</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </section>
-                        </div>
-                        <div>
-                            <section>
-                                <h2>Add a memory to the cloud</h2>
-                                <form method="post" action="#">
-                                    <div className="field">
-                                        <textarea name="message" id="message" rows="4" placeholder="Memory Entry"></textarea>
-                                    </div>
-                                    <ul className="actions">
-                                        <li><input type="submit" value="Upload a pic"/></li>
-                                        <li><input type="reset" value="Clear"/></li>
-                                        <li><input type="submit" value="Add" className="special"/></li>
-                                    </ul>
-                                </form>
-                            </section>
-                        </div>
-                    </div>
-                </footer>
             </div>
         );
     }
