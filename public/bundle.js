@@ -34793,49 +34793,33 @@ var Main = function (_Component) {
     _createClass(Main, [{
         key: 'componentDidMount',
         value: function componentDidMount() {}
-
-        //saves the article in db
-
-    }, {
-        key: 'saveUser',
-        value: function saveUser(user) {
-            console.log(" Save user called");
-            console.log(event);
-            __WEBPACK_IMPORTED_MODULE_8__util_helpers__["a" /* default */].saveUserInDB(user);
-        }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_6_react_router_dom__["a" /* BrowserRouter */],
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { id: '' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        null,
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: function component() {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home_js__["a" /* default */], null);
-                            } }),
-                        ' ',
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/login', component: function component() {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__children_authentication_Login__["a" /* default */], null);
-                            } }),
-                        ' ',
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/signup', component: function component() {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__children_authentication_Signup__["a" /* default */], { saveUser: _this2.saveUser });
-                            } }),
-                        ' ',
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/saved', component: function component() {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__children_Saved__["a" /* default */], null);
-                            } }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/new', component: function component() {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__children_Book__["a" /* default */], null);
-                            } })
-                    )
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: function component() {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home_js__["a" /* default */], null);
+                        } }),
+                    ' ',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/login', component: function component() {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__children_authentication_Login__["a" /* default */], null);
+                        } }),
+                    ' ',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/signup', component: function component() {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__children_authentication_Signup__["a" /* default */], null);
+                        } }),
+                    ' ',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/saved', component: function component() {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__children_Saved__["a" /* default */], null);
+                        } }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/new', component: function component() {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__children_Book__["a" /* default */], null);
+                        } })
                 )
             );
         }
@@ -36290,7 +36274,8 @@ var Signup = function (_Component) {
             lastname: "",
             email: "",
             password: "",
-            password2: ""
+            password2: "",
+            signedUp: false
         };
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
@@ -36310,16 +36295,43 @@ var Signup = function (_Component) {
             console.log("target fields: " + event.target.value);
             this.setState(newState);
         }
+
+        //saves the article in db
+
+    }, {
+        key: 'saveUser',
+        value: function saveUser(user) {
+            console.log(event);
+        }
     }, {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
+            var _this2 = this;
+
             event.preventDefault();
-            this.props.saveUser(this.state);
-            this.setState({});
+            console.log(" Saving user in db");
+
+            __WEBPACK_IMPORTED_MODULE_1__util_helpers__["a" /* default */].saveUserInDB(this.state).then(function (result) {
+                _this2.setState({ signedUp: true });
+            });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _login = {
+                login: {
+                    pathname: '/login'
+                }
+            },
+                login = _login.login;
+
+
+            if (this.state.signedUp) {
+                console.log('i have signed up, redirecting to login page');
+                console.log(this.state);
+                // localStorage.setItem('name',this.state);
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Redirect */], { to: login });
+            }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },

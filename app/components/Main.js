@@ -22,30 +22,19 @@ class Main extends Component {
     // The moment the page renders get the History
     componentDidMount() {}
 
-    //saves the article in db
-    saveUser(user) {
-        console.log(" Save user called");
-        console.log(event);
-        helpers.saveUserInDB(user);
-    }
-
     render() {
         return (
             <Router>
-                <div id="">
-                
-
                     {/*Component Routes*/}
                     <div>
                         {/*HomePage*/}
                         <Route exact path="/" component={() => <Home/>}/> {/*Login*/}
                         <Route exact path="/login" component={() => <Login/>}/> {/*Sign Up */}
-                        <Route exact path="/signup" component={() => <Signup saveUser={this.saveUser}/>}/> {/*All memories*/}
+                        <Route exact path="/signup" component={() => <Signup/>}/> {/*All memories*/}
                         <Route exact path="/saved" component={() => <Saved/>}/>
                         <Route exact path="/new" component={() => <Book/>}></Route>
                     </div>
-                </div>
-            </Router>
+             </Router>
         )
     }
 
