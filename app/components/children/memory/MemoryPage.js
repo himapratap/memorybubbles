@@ -10,8 +10,7 @@ class MemoryPage extends Component {
         this.state = {
             title: "",
             data: "",
-            date:"",
-            userId : localStorage.userId
+           userId : localStorage.userId
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
