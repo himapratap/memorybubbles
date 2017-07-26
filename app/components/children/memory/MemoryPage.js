@@ -8,6 +8,7 @@ class MemoryPage extends Component {
         this.state = {
             title: "",
             data: "",
+            date:"",
             userId : localStorage.userId
         };
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -51,6 +52,16 @@ class MemoryPage extends Component {
                             <div >
                                 <label htmlFor="title">Title</label>
                                 <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="row">
+                            <div className="col-md-2 col-md-offset-1">
+                                <strong>date:</strong>
+                            </div>
+                            <div className ="col-md-2">
+                                <input type="date" name="date" id="date" value={this.state.date} onChange={this.handleInputChange}/>
+                             </div>
+
                             </div>
 
                             <div>

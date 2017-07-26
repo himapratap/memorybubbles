@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import helpers from '../util/helpers'
 import renderHTML from 'react-render-html';
-
+import {Link} from 'react-router-dom';
 class Saved extends Component {
     constructor(props) {
         super(props);
@@ -53,25 +53,58 @@ class Saved extends Component {
                     {resultSection}
                 </div>
                 <header id="header">
-                        <h1><strong>Dave Bokil's Memory Bubbles </strong></h1>
-                        <nav>
-                            <ul>
-                                <li><a href="#" className="icon fa-plus-circle">Add a memory</a></li>
-                            </ul>
-                        </nav>
-                    </header>
+                    <h1>
+                        <strong>{localStorage.name}'s Memory Bubbles
+                        </strong>
+                    </h1>
+                    <nav>
+
+                        <ul>
+
+                            <li>
+                                <Link to="/new">
+                                    <button className="icon fa-plus-circle">Add a memory</button>
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
                 <footer id="footer" className="panel">
                     <div className="inner split">
                         <div>
                             <section>
                                 <h2>My Social Media</h2>
                                 <ul className="icons">
-                                    <li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
-                                    <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-                                    <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-                                    <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
-                                    <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
-                                    <li><a href="#" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
+                                    <li>
+                                        <a href="#" className="icon fa-twitter">
+                                            <span className="label">Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="icon fa-facebook">
+                                            <span className="label">Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="icon fa-instagram">
+                                            <span className="label">Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="icon fa-github">
+                                            <span className="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="icon fa-dribbble">
+                                            <span className="label">Dribbble</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="icon fa-linkedin">
+                                            <span className="label">LinkedIn</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </section>
                         </div>
@@ -83,9 +116,9 @@ class Saved extends Component {
                                         <textarea name="message" id="message" rows="4" placeholder="Memory Entry"></textarea>
                                     </div>
                                     <ul className="actions">
-                                        <li><input type="submit" value="Upload a pic" /></li>
-                                        <li><input type="reset" value="Clear" /></li>
-                                        <li><input type="submit" value="Add" className="special" /></li>
+                                        <li><input type="submit" value="Upload a pic"/></li>
+                                        <li><input type="reset" value="Clear"/></li>
+                                        <li><input type="submit" value="Add" className="special"/></li>
                                     </ul>
                                 </form>
                             </section>
