@@ -29,8 +29,11 @@ class Saved extends Component {
 
         if (resultsLength == 0) {
             resultSection = (
-                <div>
-                    <h4>You have no memories yet</h4>
+                <div className="container">
+                    <div id="noMemCenter">
+                        <h1>You have no memories yet!</h1>
+                        <h2>Click the add memory button below to start building your stack.</h2>
+                    </div>
                 </div>
             );
         } else {
@@ -57,14 +60,17 @@ class Saved extends Component {
                         <strong>{localStorage.name}'s 
                         </strong>
                     </h1>
-                    <p id="profilelogo">memorystack</p>
+                    <h1 id="profilelogo">memorystack</h1>
                     <nav>
 
                         <ul>
 
                             <li>
                                 <Link to="/new">
-                                    <button className="icon fa-plus-circle">Add a memory</button>
+                                    <button className="icon fa-plus special">Add a memory</button>
+                                </Link>
+                                <Link to="/">
+                                    <a className="icon fa-minus ">Logout</a>
                                 </Link>
                             </li>
                         </ul>

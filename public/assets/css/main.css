@@ -1413,9 +1413,9 @@
 		}
 
 		#header h1 {
-			color: #a0a0a1;
+			/*color: #a0a0a1;*/
 			display: inline-block;
-			font-size: 1em;
+			/*font-size: 1em;*/
 			line-height: 1;
 			margin: 0;
 			vertical-align: middle;
@@ -1579,16 +1579,27 @@
 				-webkit-pointer-events: none;
 				-ms-pointer-events: none;
 				pointer-events: none;
-				bottom: 1.875em;
+				/*bottom: 1.875em;*/
 				font-size: 0.8em;
-				left: 2.1875em;
-				margin: 0;
+				/*left: 2.1875em;*/
+				/*margin: 0;*/
 				position: absolute;
 				z-index: 1;
+
+
+				margin:auto;
+			  position: absolute;
+			  /*padding-top: 200px;*/
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  text-align: center;
 			}
 
 			#main .thumb > p {
 				display: none;
+				
 			}
 
 		#main:after {
@@ -1649,6 +1660,8 @@
 			height: calc(40vh - 2em);
 			min-height: 20em;
 			width: 25%;
+			border: solid;
+			border-color: #34a58e;;
 		}
 
 			#main .thumb:nth-child(1) {
@@ -2129,10 +2142,14 @@ a:hover{
 }
 
 #profilelogo {
-	color: #34a58e;
 	font-family: 'Mr Dafoe', cursive;
-	font-size: 55px;
+	/*font-size: 55px;*/
 	text-transform: lowercase;
 	padding-left: 5px;
+}
+
+#noMemCenter {
+	
+
 }
 		
