@@ -42,10 +42,10 @@ class Book extends React.Component {
         }
 
         return (
-            <div className="container">
-                <div className="row">
+            <div className=""> {/* container */}
+               {/* <div className="">  row */}
                     <MemoryPage saveMemory={this.saveMemory}/>
-                </div>
+                {/*</div>*/}
             </div>
         )
     }

@@ -51398,12 +51398,9 @@ var Book = function (_React$Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'container' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'row' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__memory_MemoryPage__["a" /* default */], { saveMemory: this.saveMemory })
-                )
+                { className: '' },
+                ' ',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__memory_MemoryPage__["a" /* default */], { saveMemory: this.saveMemory })
             );
         }
     }]);
@@ -52014,14 +52011,24 @@ var MemoryPage = function (_Component) {
                 'div',
                 { className: 'col-sm-12' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h1',
+                    { id: 'headerlogo' },
+                    'memorystack'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    null,
+                    { id: 'welcomecenter' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h1',
+                        null,
+                        'Welcome, ',
+                        name
+                    ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         null,
-                        'Hi ',
-                        name,
-                        ' !!!'
+                        ' ',
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_time___default.a, { value: now, format: 'MM/DD/YYYY' })
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -52032,53 +52039,35 @@ var MemoryPage = function (_Component) {
                         { onSubmit: this.handleSubmit },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'label',
-                                { htmlFor: 'title' },
-                                'Title'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'title', id: 'title', onChange: this.handleInputChange.bind(this) })
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
                             { className: 'row' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'col-md-2 col-md-offset-1' },
+                                { className: 'col-lg-8 col-lg-offset-2' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'strong',
+                                    'h2',
                                     null,
-                                    'date:'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'col-md-2' },
+                                    'Memory Title:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'title', id: 'title', onChange: this.handleInputChange.bind(this) }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'p',
+                                    'h2',
                                     null,
-                                    ' ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_time___default.a, { value: now, format: 'MM/DD/YYYY' })
-                                )
+                                    'Editor'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextEditor__["a" /* default */], { onChangeText: this.onChangeText })
                             )
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextEditor__["a" /* default */], { onChangeText: this.onChangeText })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
                             { type: 'submit', id: 'save' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', null),
-                            'Save'
+                            ' Save'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
                             { type: 'submit', id: 'clearButton' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { 'aria-hidden': 'true' }),
-                            'Clear'
+                            ' Clear'
                         )
                     )
                 )
@@ -52235,7 +52224,8 @@ var TextEditor = function (_Component) {
             }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'demo-root' },
+                { className: '' },
+                ' ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'demo-editorSection' },
@@ -52259,10 +52249,7 @@ var TextEditor = function (_Component) {
                                     border: '0',
                                     backgroundsize: 'cover',
                                     top: '0',
-                                    width: '100%'
-                                }
-                            }
-                        } })
+                                    width: '100%' } } } })
                 )
             );
         }

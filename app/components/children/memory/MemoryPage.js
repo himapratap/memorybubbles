@@ -47,46 +47,33 @@ class MemoryPage extends Component {
             let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
           
         return (
-          
-            <div className="col-sm-12">
-                     <div>
-                        <h3>Hi {name} !!!</h3>
-                     </div>
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div >
-                                <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
-                            </div>
-                            
-                            <div className="row">
-                            
-                            <div className="col-md-2 col-md-offset-1">
-                                <strong>date:</strong>
-                            </div>
-                            <div className ="col-md-2">
-                                
-                            
-                                <p> <Time value={now}  format="MM/DD/YYYY" /></p>   
-                           
-                             </div>
+<div className="col-sm-12">
+    <h1 id="headerlogo">memorystack</h1>
+    <div id="welcomecenter">
+        <h1>Welcome, {name}</h1>
+        <h3> <Time value={now}  format="MM/DD/YYYY" /></h3>
 
-                            </div>
-
-                            <div>
-                                {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
-                                <TextEditor onChangeText={this.onChangeText}/>
-                            </div>
-
-                            <button type="submit" id="save">
-                                <span ></span>
-                                Save</button>
-                            <button type="submit" id="clearButton">
-                                <span aria-hidden="true"></span>
-                                Clear</button>
-                        </form>
-                    </div>
+    </div>
+    <div>
+        <form onSubmit={this.handleSubmit}>
+            <div className="row">
+                <div className="col-lg-8 col-lg-offset-2">{/*col-lg-4 col-lg-offset-2*/}
+                        {/*<label htmlFor="title"><h2>Title</h2></label>*/}
+                        <h2>Memory Title:</h2>
+                        <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
+                        <h2>Editor</h2>
+                        <TextEditor onChangeText={this.onChangeText}/>
                 </div>
+            </div>
+            <button type="submit" id="save">
+                <span></span> Save
+            </button>
+            <button type="submit" id="clearButton">
+                <span aria-hidden="true"></span> Clear
+            </button>
+        </form>
+    </div>
+</div>
          )
     }
 }
