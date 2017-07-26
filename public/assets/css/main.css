@@ -193,6 +193,7 @@
 		a:hover{
 			border-bottom-color: transparent;
 			color: #34a58e !important;
+			text-decoration: none;
 		}
 
 	strong, b {
@@ -1599,7 +1600,8 @@
 			}
 
 			#main .thumb > p {
-				
+				text-align: justify;
+    		/*text-justify: inter-word;*/
 			}
 
 			#memcontentpad {
@@ -2142,8 +2144,8 @@ a:hover{
 
 #logo {
 	font-family: 'Mr Dafoe', cursive;
-	font-size: 150px;
-	font-weight: 200%;
+	font-size: 200px;
+	/*font-weight: 500;*/
 	color: #34a58e;
 	text-transform: lowercase;
 	padding-bottom: 0px;
@@ -2168,5 +2170,22 @@ a:hover{
   width: 50%;
   text-align: center;
   padding-top: 150px;
+}
+
+#headerlogo {
+	font-family: 'Mr Dafoe', cursive;
+	color: #34a58e;
+	text-transform: lowercase;
+	font-size: 50px;
+	font-weight: 500;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#welcomecenter {
+	margin: auto;
+  width: 50%;
+  text-align: center;
+  /*padding-top: 150px;*/
 }
 		
