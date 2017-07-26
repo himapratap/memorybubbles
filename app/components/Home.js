@@ -21,7 +21,7 @@ class Home extends React.Component {
         return (
             <div className="homepage-hero-module">
                 <div className="video-container">
-                    <div className="filter"></div>
+                    {/*<div className="filter"></div>*/}
                     <video loop autoPlay className="fillWidth">
                         <source src={this.state.videoURL} type="video/mp4" />
                         <source src={this.state.videoWebURL} type="video/webm" />
