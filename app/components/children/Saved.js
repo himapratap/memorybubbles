@@ -43,7 +43,7 @@ class Saved extends Component {
                         <h2>
                             {element.title}
                         </h2>
-                        <div>{renderHTML(element.data)}
+                        <div id="memcontentpad">{renderHTML(element.data)}
                         </div>
                     </article>
                 )
