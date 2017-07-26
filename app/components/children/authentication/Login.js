@@ -31,11 +31,12 @@ class Login extends Component {
             console.log(result);
 
             if (result.data != 'invalid') {
-                this.setState({authenticated: true});
                 console.log(`Login success`);
                 localStorage.setItem('name',result.data.firstname);
                 localStorage.setItem('userId',result.data._id);
                 console.log(localStorage);
+                this.setState({authenticated: true});
+
 
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
@@ -92,7 +93,7 @@ class Login extends Component {
                                 <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
                                     </Link></p>
                         </div>
-                         
+
                     </div>
                 </div>
 

@@ -4,7 +4,6 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-
 // ***&&&*** Passport video dependencies
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -14,7 +13,6 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
 
 var Memory = require("./models/Memory");
 var User = require("./models/User");
@@ -122,11 +120,9 @@ app.post("/api/save", function(req, res) {
     newMemory.save(function(err, memory) {
         if (err) {
             console.log(err);
-        } else {
-            return 'success';
         }
+        return res.send('success')
     });
-
 });
 
 // Post route to database for new user
@@ -139,10 +135,9 @@ app.post("/api/user/save", function(req, res) {
     console.log(user.password)
     var newUser = new User({firstname: user.firstname, lastname: user.lastname, email: user.email, password: user.password});
     User.createUser(newUser, function(err, user) {
-        if (err)
+         if (err)
             throw err;
-        console.log(user + "User is in!");
-        return res.status(200);
+         return res.send('success')
     });
 
 });
