@@ -14,7 +14,6 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-// Require Models
 var Memory = require("./models/Memory");
 var User = require("./models/User");
 
@@ -83,7 +82,7 @@ db.on("error", function(err) {
     console.log("Mongoose Error: ", err);
 });
 
-db.once("open", function() {
+db.once("openUri", function() {
     console.log("Mongoose connection successful.");
 });
 
@@ -94,15 +93,12 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
 
-
 app.get("/api/:id", function(req, res) {
     console.log("Get all api method.");
-    var id = req.params.id ;
+    var id = req.params.id;
     console.log(`Searching against the user id ${id}`);
     // We will find all the records, sort it in descending order, then limit the records to 5
-    Memory.find({
-        userId: id
-    }).sort([
+    Memory.find({userId: id}).sort([
         ["date", "descending"]
     ]).limit(100).exec(function(err, memories) {
         if (err) {
@@ -117,18 +113,16 @@ app.get("/api/:id", function(req, res) {
 app.post("/api/save", function(req, res) {
     console.log("Inside Save memory method.");
     var memory = req.body.memory;
-  console.log(memory);
+    console.log(memory);
     console.log(`Memory to be saved: ${memory.data}`);
 
     var newMemory = new Memory(memory);
     newMemory.save(function(err, memory) {
         if (err) {
             console.log(err);
-        } else {
-            res.send("Saved memory");
         }
+        return res.send('success')
     });
-
 });
 
 // Post route to database for new user
@@ -139,12 +133,11 @@ app.post("/api/user/save", function(req, res) {
     console.log(user.lastname)
     console.log(user.email)
     console.log(user.password)
-    console.log(user.password2)
     var newUser = new User({firstname: user.firstname, lastname: user.lastname, email: user.email, password: user.password});
     User.createUser(newUser, function(err, user) {
-        if (err)
+         if (err)
             throw err;
-        console.log(user + "User is in!");
+         return res.send('success')
     });
 
 });

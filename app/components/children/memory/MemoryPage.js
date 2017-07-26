@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Time from 'react-time';
 import TextEditor from './TextEditor';
 import { Redirect } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ class MemoryPage extends Component {
         this.state = {
             title: "",
             data: "",
-            userId : localStorage.userId
+           userId : localStorage.userId
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,7 +43,11 @@ class MemoryPage extends Component {
     render() {
         const name = localStorage.name;
         console.log(localStorage);
+            let now = new Date();
+            let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
+          
         return (
+          
             <div className="col-sm-12">
                      <div>
                         <h3>Hi {name} !!!</h3>
@@ -51,7 +56,21 @@ class MemoryPage extends Component {
                         <form onSubmit={this.handleSubmit}>
                             <div >
                                 <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
+                                <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
+                            </div>
+                            
+                            <div className="row">
+                            
+                            <div className="col-md-2 col-md-offset-1">
+                                <strong>date:</strong>
+                            </div>
+                            <div className ="col-md-2">
+                                
+                            
+                                <p> <Time value={now}  format="MM/DD/YYYY" /></p>   
+                           
+                             </div>
+
                             </div>
 
                             <div>

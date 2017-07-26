@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import helpers from '../../util/helpers'
-import {Link, Redirect, Route, BrowserRouter as Router} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 class Signup extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             firstname: "",
             lastname: "",
             email: "",
             password: "",
-            password2: ""
+            password2: "",
+            signedUp: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,14 +29,37 @@ class Signup extends Component {
         this.setState(newState);
 
     }
+
+    //saves the article in db
+    saveUser(user) {
+        console.log(event);
+    }
+
     handleSubmit(event) {
         event.preventDefault();
-        this.props.saveUser(this.state);
-        this.setState({})
+        console.log(" Saving user in db");
 
+        helpers.saveUserInDB(this.state).then((result) => {
+            this.setState({signedUp: true});
+            console.log('yaaay saved');
+        });
     }
+
     render() {
+        const {login} = {
+            login: {
+                pathname: '/login'
+            }
+        }
+
+        if (this.state.signedUp) {
+            console.log('i have signed up, redirecting to login page');
+            console.log(this.state);
+            // localStorage.setItem('name',this.state);
+            return (<Redirect to={login}/>)
+        }
         return (
+
             <div className="container">
                 <div className="row">
                     <div className="col-md-4"></div>
@@ -67,6 +92,7 @@ class Signup extends Component {
                     <div className="col-md-4"></div>
                 </div>
             </div>
+
         )
     }
 }

@@ -9,7 +9,7 @@ import './home.scss'
 class Home extends React.Component {
     constructor (props) {
         super(props);
-
+        localStorage.clear();
         this.state = {
             videoURL: '/assets/videos/Workaholic.mp4',
             picURL: '/assets/videos/Workaholic.jpg',
@@ -42,5 +42,5 @@ export default Home;
 {/*<p>Write statuses, upload images, decorate with emojis.</p>
                         <p>All in your own private digital space.</p>
                         <p>Share the information you want to share!</p>*/}
-                        
+
 {/*<button type="submit" className="special">Get Started</button>*/}
