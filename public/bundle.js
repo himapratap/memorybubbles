@@ -52033,7 +52033,7 @@ var MemoryPage = function (_Component) {
             console.log(localStorage);
             var now = new Date();
             var wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400");
-            this.setState({ date: now });
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'col-sm-12' },
@@ -52062,7 +52062,7 @@ var MemoryPage = function (_Component) {
                                 { htmlFor: 'title' },
                                 'Title'
                             ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'title', id: 'title', value: this.state.title, onChange: this.handleInputChange })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'title', id: 'title', onChange: this.handleInputChange.bind(this) })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',

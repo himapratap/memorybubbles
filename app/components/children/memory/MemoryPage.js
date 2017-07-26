@@ -46,7 +46,7 @@ class MemoryPage extends Component {
         console.log(localStorage);
             let now = new Date();
             let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
-            this.setState({date: now});
+          
         return (
           
             <div className="col-sm-12">
@@ -57,7 +57,7 @@ class MemoryPage extends Component {
                         <form onSubmit={this.handleSubmit}>
                             <div >
                                 <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
+                                <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
                             </div>
                             
                             <div className="row">
