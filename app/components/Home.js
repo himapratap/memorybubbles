@@ -31,7 +31,7 @@ class Home extends React.Component {
                         <Link to="/login">
                     <div id="polina">
                         <h1 id="logo">MemorySTACK</h1>
-                        <h1>A responsive digital diary.</h1>
+                        <h1>A responsive digital diary</h1>
                         <h3>Track your memories.</h3>
                         <h3>Upload photos.</h3>
                         <h3>All on your private digital space.</h3>
