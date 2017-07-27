@@ -2211,6 +2211,13 @@ a:hover{
 
 }	
 
+.login-img{
+	width: 70%;
+	height: 50%;
+	border: solid 3px #34a58e;
+	/*box-shadow: 10px 10px 5px #34a58e;*/
+	/*border-radius: 5px;*/
+}
 
 /*
 <<<<<<< HEAD
