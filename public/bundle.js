@@ -51269,6 +51269,7 @@ var Home = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
         localStorage.clear();
+        console.log('clearing local storage and reloading home');
         _this.state = {
             videoURL: '/assets/videos/Workaholic.mp4',
             picURL: '/assets/videos/Workaholic.jpg',
@@ -51280,6 +51281,7 @@ var Home = function (_React$Component) {
     _createClass(Home, [{
         key: 'render',
         value: function render() {
+            console.log('rerendering');
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'homepage-hero-module' },
@@ -51302,6 +51304,26 @@ var Home = function (_React$Component) {
                                 'h1',
                                 { id: 'logo' },
                                 'MemorySTACK'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h1',
+                                null,
+                                'A responsive digital diary.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'Track your memories.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'Upload photos.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'All on your private digital space.'
                             )
                         )
                     )
@@ -52038,7 +52060,6 @@ var MemoryPage = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         null,
-                        ' ',
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_time___default.a, { value: now, format: 'MM/DD/YYYY' })
                     )
                 ),
@@ -52054,6 +52075,7 @@ var MemoryPage = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'col-lg-8 col-lg-offset-2' },
+                                ' ',
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'h2',
                                     null,
@@ -52069,14 +52091,13 @@ var MemoryPage = function (_Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
                                     { type: 'submit', className: 'special', id: 'save' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', null),
-                                    ' Save'
+                                    'Save'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
                                     { type: 'submit', id: 'clearButton' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { 'aria-hidden': 'true' }),
-                                    ' Go Back'
+                                    'Go Back'
                                 )
                             )
                         )
