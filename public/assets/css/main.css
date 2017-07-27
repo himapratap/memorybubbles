@@ -2208,13 +2208,20 @@ a:hover{
 	margin-bottom: 0px;
 	padding-top: 0px;
 	margin-top:0px;
+	/*margin-left: 45px;*/
 
+}
+
+.centext {
+	text-align: center;
 }
 
 .login-img{
 	width: 70%;
 	height: 50%;
-	border: solid 3px #34a58e;
+/*	margin-left: -10px;
+	left: -5px;*/
+	/*border: solid 3px #34a58e;*/
 	/*box-shadow: 10px 10px 5px #34a58e;*/
 	/*border-radius: 5px;*/
 }
