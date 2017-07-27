@@ -2154,10 +2154,13 @@ a:hover{
 
 }
 
+
+
 #landingfont {
 	color: #34a58e;
 	background-color: black;
 }
+
 
 #profilelogo {
 	font-family: 'Mr Dafoe', cursive;
@@ -2207,3 +2210,34 @@ a:hover{
 	margin-top:0px;
 
 }	
+
+.login-img{
+	width: 70%;
+	height: 50%;
+	border: solid 3px #34a58e;
+	/*box-shadow: 10px 10px 5px #34a58e;*/
+	/*border-radius: 5px;*/
+}
+
+/*
+<<<<<<< HEAD
+.signup-row{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.signup-header{
+	margin-top: 10%;
+}
+.signup-header-div{
+	margin-left: 7%;
+}
+		
+=======
+
+.login-page{
+	margin-top: 5%;
+
+}
+=======
+>>>>>>> bd2f8deb9ff668f9332c2c3905ade121ce7c5ce1
+*/

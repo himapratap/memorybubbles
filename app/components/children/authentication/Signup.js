@@ -64,6 +64,9 @@ class Signup extends Component {
         <div className="col-md-6 col-lg-6">
             <h1>Welcome to</h1>
             <h1 id="authlogo">MemoryStack</h1>
+            <p></p>
+            <img className="login-img" src="/assets/css/images/vintage.jpg"/>
+                        
         </div>
         <div className="col-md-6 col-lg-6">
             <h1>Register</h1>
@@ -88,7 +91,7 @@ class Signup extends Component {
                     <label>Confirm Password</label>
                     <input type="password" className="form-control" placeholder="Password" name="password2" id="password2" onChange={this.handleChange} required/>
                 </div>
-                <button type="submit" className="">Submit</button>
+                <button type="submit" className="special">Submit</button>
             </form>
         </div>
     </div>

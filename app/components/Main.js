@@ -33,6 +33,9 @@ class Main extends Component {
                         <Route exact path="/signup" component={() => <Signup/>}/> {/*All memories*/}
                         <Route exact path="/saved" component={() => <Saved/>}/>
                         <Route exact path="/new" component={() => <Book/>}></Route>
+                        
+
+                        
                     </div>
              </Router>
         )
