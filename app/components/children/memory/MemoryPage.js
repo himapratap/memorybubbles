@@ -61,16 +61,17 @@ class MemoryPage extends Component {
                         {/*<label htmlFor="title"><h2>Title</h2></label>*/}
                         <h2>Memory Title:</h2>
                         <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
-                        <h2>Editor</h2>
+                        <h2>Text Editor:</h2>
                         <TextEditor onChangeText={this.onChangeText}/>
-                </div>
-            </div>
-            <button type="submit" id="save">
+
+            <button type="submit" className="special"id="save">
                 <span></span> Save
             </button>
             <button type="submit" id="clearButton">
-                <span aria-hidden="true"></span> Clear
+                <span aria-hidden="true"></span> Go Back
             </button>
+                            </div>
+            </div>
         </form>
     </div>
 </div>
