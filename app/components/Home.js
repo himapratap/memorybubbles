@@ -26,11 +26,13 @@ class Home extends React.Component {
                         <source src={this.state.videoURL} type="video/mp4" />
                         <source src={this.state.videoWebURL} type="video/webm" />
                     </video>
-                    <div id="polina">
                         <Link to="/login">
+                    <div id="polina">
+                        
                         <h1 id="logo">MemorySTACK</h1>
-                        </Link>
+                        
                     </div>
+                    </Link>
                 </div>
             </div>
         )
