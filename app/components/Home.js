@@ -10,6 +10,7 @@ class Home extends React.Component {
     constructor (props) {
         super(props);
         localStorage.clear();
+        console.log('clearing local storage and reloading home');
         this.state = {
             videoURL: '/assets/videos/Workaholic.mp4',
             picURL: '/assets/videos/Workaholic.jpg',
@@ -18,6 +19,7 @@ class Home extends React.Component {
     }
 
     render () {
+       console.log('rerendering');
         return (
             <div className="homepage-hero-module">
                 <div className="video-container">
