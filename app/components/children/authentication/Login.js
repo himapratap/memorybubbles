@@ -32,11 +32,10 @@ class Login extends Component {
 
             if (result.data != 'invalid') {
                 console.log(`Login success`);
-                localStorage.setItem('name',result.data.firstname);
-                localStorage.setItem('userId',result.data._id);
+                localStorage.setItem('name', result.data.firstname);
+                localStorage.setItem('userId', result.data._id);
                 console.log(localStorage);
                 this.setState({authenticated: true});
-
 
             } else {
                 this.setState({errMssg: 'Invalid Username or Password'});
@@ -63,33 +62,35 @@ class Login extends Component {
         return (
 
             <div className="container authpadding">
-                    <div className="row">
-                        <div className="col-md-6 col-lg-6">
+                <div className="row">
+                    <div className="col-md-6 col-lg-6">
                         <h1>Welcome to</h1>
                         <h1 id="authlogo">MemorySTACK</h1>
                         <p></p>
                         <img className="login-img" src="/assets/css/images/vintage.jpg"/>
-                        </div>
-                        <div className="col-md-6 col-lg-6">
-                                <h1>Login</h1>
-                                <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group">
-                                        <label>Email</label>
-                                        <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Password</label>
-                                        <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
-                                    </div>
-                                    <button type="submit" className="special">Submit</button>
-                                    <div>{this.state.errMssg}</div>
-                                </form>
-                                <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
-                                    </Link></p>
-
-                        </div>
                     </div>
-                    {/*<div className="row">
+                    <div className="col-md-6 col-lg-6">
+                        <h1>Login</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                            </div>
+                            <div className="form-group">
+                                <label>Password</label>
+                                <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                            </div>
+                            <button type="submit" className="special">Submit</button>
+                            <div>{this.state.errMssg}</div>
+                        </form>
+                        <p>Need an account?</p>
+                        <Link to="/signup">
+                            <p>Sign Up Now!</p>
+                        </Link>
+
+                    </div>
+                </div>
+                {/*<div className="row">
                         <div className="col-md-4">
                         </div>
                         <div className="col-md-4">
@@ -112,8 +113,7 @@ class Login extends Component {
                         </div>
 
                     </div>*/}
-                </div>
-
+            </div>
 
         )
     }

@@ -12,9 +12,7 @@ class Saved extends Component {
     }
 
     componentWillMount() {
-        console.log("will mount");
         helpers.getAllMemories().then(function(memories) {
-            console.log(" will mount got memories");
             console.log(memories.data);
             this.setState({'memories': memories.data});
 
@@ -57,7 +55,7 @@ class Saved extends Component {
                 </div>
                 <header id="header">
                     <h1>
-                        <strong>{localStorage.name}'s 
+                        <strong>{localStorage.name}'s
                         </strong>
                     </h1>
                     <h1 id="profilelogo">memorystack</h1>
