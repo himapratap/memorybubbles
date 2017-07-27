@@ -4817,6 +4817,47 @@ var emptyFunction = __webpack_require__(11);
 var warning = emptyFunction;
 
 if (process.env.NODE_ENV !== 'production') {
+<<<<<<< HEAD
+  (function () {
+    var printWarning = function printWarning(format) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      var argIndex = 0;
+      var message = 'Warning: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch (x) {}
+    };
+
+    warning = function warning(condition, format) {
+      if (format === undefined) {
+        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+      }
+
+      if (format.indexOf('Failed Composite propType: ') === 0) {
+        return; // Ignore CompositeComponent proptype check.
+      }
+
+      if (!condition) {
+        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+          args[_key2 - 2] = arguments[_key2];
+        }
+
+        printWarning.apply(undefined, [format].concat(args));
+      }
+    };
+  })();
+=======
   var printWarning = function printWarning(format) {
     for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
@@ -4854,6 +4895,7 @@ if (process.env.NODE_ENV !== 'production') {
       printWarning.apply(undefined, [format].concat(args));
     }
   };
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 }
 
 module.exports = warning;
@@ -11545,6 +11587,7 @@ module.exports = { debugTool: debugTool };
 /* 18 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 var g;
 
 // This works in non-strict mode
@@ -11566,6 +11609,29 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+=======
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 
 
 /***/ }),
@@ -29442,11 +29508,26 @@ module.exports = DataTransfer;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
+<<<<<<< HEAD
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+=======
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
  *
  * @typechecks
  */
@@ -51286,15 +51367,46 @@ var Home = function (_React$Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { src: this.state.videoWebURL, type: 'video/webm' })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+<<<<<<< HEAD
+                        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
+                        { to: '/login' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { id: 'polina' },
+=======
                         'div',
                         { id: 'polina' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
                             { to: '/login' },
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h1',
                                 { id: 'logo' },
                                 'MemorySTACK'
+<<<<<<< HEAD
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h1',
+                                null,
+                                'A responsive digital diary.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'Track your memories.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'Upload photos.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                'All on your private digital space.'
+=======
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
                             )
                         )
                     )
@@ -77995,8 +78107,13 @@ exports.default = valueEqual;
 /* 592 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
+=======
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
@@ -78004,6 +78121,7 @@ module.exports = __webpack_amd_options__;
 /* 593 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = function(module) {
 	if(!module.webpackPolyfill) {
 		module.deprecate = function() {};
@@ -78026,6 +78144,30 @@ module.exports = function(module) {
 	}
 	return module;
 };
+=======
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 
 
 /***/ }),
