@@ -4817,45 +4817,43 @@ var emptyFunction = __webpack_require__(11);
 var warning = emptyFunction;
 
 if (process.env.NODE_ENV !== 'production') {
-  (function () {
-    var printWarning = function printWarning(format) {
-      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
+  var printWarning = function printWarning(format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function warning(condition, format) {
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.indexOf('Failed Composite propType: ') === 0) {
+      return; // Ignore CompositeComponent proptype check.
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
       }
 
-      var argIndex = 0;
-      var message = 'Warning: ' + format.replace(/%s/g, function () {
-        return args[argIndex++];
-      });
-      if (typeof console !== 'undefined') {
-        console.error(message);
-      }
-      try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-      } catch (x) {}
-    };
-
-    warning = function warning(condition, format) {
-      if (format === undefined) {
-        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-      }
-
-      if (format.indexOf('Failed Composite propType: ') === 0) {
-        return; // Ignore CompositeComponent proptype check.
-      }
-
-      if (!condition) {
-        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-          args[_key2 - 2] = arguments[_key2];
-        }
-
-        printWarning.apply(undefined, [format].concat(args));
-      }
-    };
-  })();
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
 }
 
 module.exports = warning;
@@ -14346,7 +14344,11 @@ module.exports = __webpack_require__(462);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_queryString__ = __webpack_require__(447);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_queryString__ = __webpack_require__(446);
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_queryString___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_queryString__);
 
 
@@ -24363,7 +24365,11 @@ module.exports = ReactPropTypesSecret;
 
 
 var DOMLazyTree = __webpack_require__(39);
+<<<<<<< HEAD
 var Danger = __webpack_require__(454);
+=======
+var Danger = __webpack_require__(453);
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactInstrumentation = __webpack_require__(17);
 
@@ -29444,18 +29450,11 @@ module.exports = DataTransfer;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
  */
@@ -46820,7 +46819,11 @@ var ReactDOMFeatureFlags = __webpack_require__(466);
 var ReactFeatureFlags = __webpack_require__(279);
 var ReactInstanceMap = __webpack_require__(54);
 var ReactInstrumentation = __webpack_require__(17);
+<<<<<<< HEAD
 var ReactMarkupChecksum = __webpack_require__(486);
+=======
+var ReactMarkupChecksum = __webpack_require__(485);
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 var ReactReconciler = __webpack_require__(40);
 var ReactUpdateQueue = __webpack_require__(102);
 var ReactUpdates = __webpack_require__(24);
@@ -51269,6 +51272,7 @@ var Home = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
         localStorage.clear();
+        console.log('clearing local storage and reloading home');
         _this.state = {
             videoURL: '/assets/videos/Workaholic.mp4',
             picURL: '/assets/videos/Workaholic.jpg',
@@ -51280,6 +51284,7 @@ var Home = function (_React$Component) {
     _createClass(Home, [{
         key: 'render',
         value: function render() {
+            console.log('rerendering');
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'homepage-hero-module' },
@@ -52041,7 +52046,6 @@ var MemoryPage = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'h3',
                         null,
-                        ' ',
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_time___default.a, { value: now, format: 'MM/DD/YYYY' })
                     )
                 ),
@@ -52057,6 +52061,7 @@ var MemoryPage = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'col-lg-8 col-lg-offset-2' },
+                                ' ',
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'h2',
                                     null,
@@ -52072,14 +52077,13 @@ var MemoryPage = function (_Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
                                     { type: 'submit', className: 'special', id: 'save' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', null),
-                                    ' Save'
+                                    'Save'
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'button',
                                     { type: 'submit', id: 'clearButton' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { 'aria-hidden': 'true' }),
-                                    ' Go Back'
+                                    'Go Back'
                                 )
                             )
                         )
@@ -62441,7 +62445,11 @@ DevNullStream.prototype._write = function (chunk, encoding, cb) {
 
 
 var TransformStream = __webpack_require__(43).Transform,
+<<<<<<< HEAD
     DevNullStream = __webpack_require__(436),
+=======
+    DevNullStream = __webpack_require__(435),
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
     inherits = __webpack_require__(56).inherits,
     Tokenizer = __webpack_require__(51),
     ParserFeedbackSimulator = __webpack_require__(438),
@@ -66832,8 +66840,13 @@ module.exports = ReactDOM;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(6);
 
+<<<<<<< HEAD
 var AutoFocusUtils = __webpack_require__(450);
 var CSSPropertyOperations = __webpack_require__(452);
+=======
+var AutoFocusUtils = __webpack_require__(449);
+var CSSPropertyOperations = __webpack_require__(451);
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 var DOMLazyTree = __webpack_require__(39);
 var DOMNamespaces = __webpack_require__(96);
 var DOMProperty = __webpack_require__(27);
@@ -70326,7 +70339,11 @@ var ReactInstrumentation = __webpack_require__(17);
 
 var ReactCurrentOwner = __webpack_require__(25);
 var ReactReconciler = __webpack_require__(40);
+<<<<<<< HEAD
 var ReactChildReconciler = __webpack_require__(459);
+=======
+var ReactChildReconciler = __webpack_require__(458);
+>>>>>>> 9e90faa5dcb1e96a4877e17fd02ea47ff12b360c
 
 var emptyFunction = __webpack_require__(11);
 var flattenChildren = __webpack_require__(512);
