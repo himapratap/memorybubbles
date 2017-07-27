@@ -68,7 +68,7 @@ class Login extends Component {
                         <h1>Welcome to</h1>
                         <h1 id="authlogo">MemorySTACK</h1>
                         <p></p>
-                        <img className="login-img" src="/assets/images/vintage.jpg"/>
+                        <img className="login-img" src="/assets/css/images/vintage.jpg"/>
                         </div>
                         <div className="col-md-6 col-lg-6">
                                 <h1>Login</h1>

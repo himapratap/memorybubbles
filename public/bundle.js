@@ -50451,9 +50451,6 @@ var Main = function (_Component) {
                         } }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/new', component: function component() {
                             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__children_Book__["a" /* default */], null);
-                        } }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/logout', component: function component() {
-                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__children_authentication_Login__["a" /* default */], null);
                         } })
                 )
             );
@@ -51685,7 +51682,7 @@ var Login = function (_Component) {
                             'MemorySTACK'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'login-img', src: '/assets/images/vintage.jpg' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'login-img', src: '/assets/css/images/vintage.jpg' })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -51867,7 +51864,7 @@ var Signup = function (_Component) {
                             'MemoryStack'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'login-img', src: '/assets/images/vintage.jpg' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'login-img', src: '/assets/css/images/vintage.jpg' })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
