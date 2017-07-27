@@ -62,17 +62,33 @@ class Login extends Component {
 
         return (
 
-            <div className="">
+            <div className="container authpadding">
                     <div className="row">
-                        <div className="col-md-2">
+                        <div className="col-md-6 col-lg-6">
+                        <h1>Welcome to</h1>
+                        <h1 id="authlogo">MemorySTACK</h1>
+                        <p></p>
                         </div>
-                        <div className="col-md-4">
-                            <h1 id="logo">MemorySTACK</h1>
-                        </div>
-                        <div className="col-md-4">
+                        <div className="col-md-6 col-lg-6">
+                                <h1>Login</h1>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="form-group">
+                                        <label>Email</label>
+                                        <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Password</label>
+                                        <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                                    </div>
+                                    <button type="submit" className="special">Submit</button>
+                                    <div>{this.state.errMssg}</div>
+                                </form>
+                                <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
+                                    </Link></p>
+
                         </div>
                     </div>
-                    <div className="row">
+                    {/*<div className="row">
                         <div className="col-md-4">
                         </div>
                         <div className="col-md-4">
@@ -94,7 +110,7 @@ class Login extends Component {
                                     </Link>
                         </div>
 
-                    </div>
+                    </div>*/}
                 </div>
 
 

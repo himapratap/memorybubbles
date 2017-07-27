@@ -214,7 +214,8 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 		line-height: 1.5;
-		margin: 0 0 1em 0;
+		/*margin: 0 0 1em 0;*/
+		margin: 0 0 0 0;
 		text-transform: uppercase;
 	}
 
@@ -2144,7 +2145,7 @@ a:hover{
 
 #logo {
 	font-family: 'Mr Dafoe', cursive;
-	font-size: 200px;
+	font-size: 150px;
 	/*font-weight: 500;*/
 	color: #34a58e;
 	text-transform: lowercase;
@@ -2188,4 +2189,21 @@ a:hover{
   text-align: center;
   /*padding-top: 150px;*/
 }
-		
+
+.authpadding {
+	margin-top: 100px;
+}
+	
+
+#authlogo {
+	font-family: 'Mr Dafoe', cursive;
+	color: #34a58e;
+	text-transform: lowercase;
+	font-size: 50px;
+	font-weight: 500;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	margin-top:0px;
+
+}	

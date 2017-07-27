@@ -59,40 +59,40 @@ class Signup extends Component {
             return (<Redirect to={login}/>)
         }
         return (
-
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4"></div>
-                    <div className="col-md-4">
-                        <h1>Register</h1>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <label>First Name</label>
-                                <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
-                            </div>
-                            <div className="form-group">
-                                <label>Last Name</label>
-                                <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname" onChange={this.handleChange} required/>
-                            </div>
-                            <div className="form-group">
-                                <label>Email</label>
-                                <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
-                            </div>
-                            <div className="form-group">
-                                <label>Password</label>
-                                <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
-                            </div>
-                            <div className="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" className="form-control" placeholder="Password" name="password2" id="password2" onChange={this.handleChange} required/>
-                            </div>
-                            <button type="submit" className="">Submit</button>
-                        </form>
-                    </div>
-                    <div className="col-md-4"></div>
+<div className="container authpadding">
+    <div className="row">
+        <div className="col-md-6 col-lg-6">
+            <h1>Welcome to</h1>
+            <h1 id="authlogo">MemoryStack</h1>
+        </div>
+        <div className="col-md-6 col-lg-6">
+            <h1>Register</h1>
+            <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" name="firstname" id="firstname" onChange={this.handleChange} required/>
                 </div>
-            </div>
-
+                <div className="form-group">
+                    <label>Last Name</label>
+                    <input type="text" className="form-control" placeholder="Last Name" name="lastname" id="lastname" onChange={this.handleChange} required/>
+                </div>
+                <div className="form-group">
+                    <label>Email</label>
+                    <input type="email" className="form-control" placeholder="Email" name="email" id="email" onChange={this.handleChange} required/>
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Password" name="password" id="password" onChange={this.handleChange} required/>
+                </div>
+                <div className="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" className="form-control" placeholder="Password" name="password2" id="password2" onChange={this.handleChange} required/>
+                </div>
+                <button type="submit" className="">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
         )
     }
 }
