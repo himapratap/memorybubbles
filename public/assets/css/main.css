@@ -193,6 +193,7 @@
 		a:hover{
 			border-bottom-color: transparent;
 			color: #34a58e !important;
+			text-decoration: none;
 		}
 
 	strong, b {
@@ -213,7 +214,8 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 		line-height: 1.5;
-		margin: 0 0 1em 0;
+		/*margin: 0 0 1em 0;*/
+		margin: 0 0 0 0;
 		text-transform: uppercase;
 	}
 
@@ -1413,9 +1415,9 @@
 		}
 
 		#header h1 {
-			color: #a0a0a1;
+			/*color: #a0a0a1;*/
 			display: inline-block;
-			font-size: 1em;
+			/*font-size: 1em;*/
 			line-height: 1;
 			margin: 0;
 			vertical-align: middle;
@@ -1579,17 +1581,49 @@
 				-webkit-pointer-events: none;
 				-ms-pointer-events: none;
 				pointer-events: none;
-				bottom: 1.875em;
-				font-size: 0.8em;
-				left: 2.1875em;
-				margin: 0;
+				/*bottom: 1.875em;*/
+				font-size: 15px;
+				/*left: 2.1875em;*/
+				/*margin: 0;*/
 				position: absolute;
 				z-index: 1;
+				margin:auto;
+			  position: absolute;
+			  /*text-decoration: underline;*/
+			  /*padding-top: 200px;*/
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  text-align: center;
+			  /*color: #34a58e;*/
+			  /*font-weight: 900;*/
 			}
 
 			#main .thumb > p {
-				display: none;
+				text-align: justify;
+    		/*text-justify: inter-word;*/
 			}
+
+			#memcontentpad {
+				
+			}
+
+			#memcontentpad > p {
+			    padding-top: 20px;
+			}
+
+			#memcontentpad > img {
+					margin: auto;
+					height: 100%;
+					background-position: center;
+					position: absolute;
+					border: 0;
+					background-size: cover;
+					top: 0;
+					width: auto;
+			}
+
 
 		#main:after {
 			-moz-pointer-events: none;
@@ -1649,6 +1683,8 @@
 			height: calc(40vh - 2em);
 			min-height: 20em;
 			width: 25%;
+			border: solid;
+			border-color: #34a58e;;
 		}
 
 			#main .thumb:nth-child(1) {
@@ -2048,7 +2084,7 @@
   /*background-color: black;*/
   color: white;
   /*padding: 6rem;*/
-  width: 70%;
+  width: 90%;
   margin:auto;
   /*margin-top: 10%;*/
   /*float: right;*/
@@ -2110,27 +2146,74 @@ a:hover{
 #logo {
 	font-family: 'Mr Dafoe', cursive;
 	font-size: 150px;
-	font-weight: 200%;
+	/*font-weight: 500;*/
 	color: #34a58e;
 	text-transform: lowercase;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 	text-decoration: none;
 }
-.login-page{
-	margin-top: 5%;
 
-}
 
-#logo:a {
-	text-decoration: none;
-}
 
 #landingfont {
 	color: #34a58e;
 	background-color: black;
 }
 
+
+#profilelogo {
+	font-family: 'Mr Dafoe', cursive;
+	/*font-size: 55px;*/
+	text-transform: lowercase;
+	padding-left: 5px;
+}
+
+#noMemCenter {
+	margin: auto;
+  width: 50%;
+  text-align: center;
+  padding-top: 150px;
+}
+
+#headerlogo {
+	font-family: 'Mr Dafoe', cursive;
+	color: #34a58e;
+	text-transform: lowercase;
+	font-size: 50px;
+	font-weight: 500;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#welcomecenter {
+	margin: auto;
+  width: 50%;
+  text-align: center;
+  /*padding-top: 150px;*/
+}
+
+.authpadding {
+	margin-top: 100px;
+}
+	
+
+#authlogo {
+	font-family: 'Mr Dafoe', cursive;
+	color: #34a58e;
+	text-transform: lowercase;
+	font-size: 50px;
+	font-weight: 500;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	margin-top:0px;
+
+}	
+
+
+/*
+<<<<<<< HEAD
 .signup-row{
 	margin-top: 2%;
 	margin-bottom: 2%;
@@ -2142,3 +2225,12 @@ a:hover{
 	margin-left: 7%;
 }
 		
+=======
+
+.login-page{
+	margin-top: 5%;
+
+}
+=======
+>>>>>>> bd2f8deb9ff668f9332c2c3905ade121ce7c5ce1
+*/

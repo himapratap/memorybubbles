@@ -38,7 +38,7 @@
 }
 
 .demo-wrapper-wide {
-    width: 810px !important;
+    width: 975px !important;
     display: block !important;
     margin-bottom: 50px !important;
     height: 355px !important;
@@ -470,6 +470,8 @@
     display: flex;
     align-items: center;
     padding: 0 5px;
+    color: black;
+    font-weight: 900;
 }
 
 .rdw-dropdownoption-highlighted {
@@ -543,6 +545,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: black;
 }
 
 .rdw-image-modal-header-label {
@@ -585,7 +588,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    color: grey;
+    color: black;
 }
 
 .rdw-image-modal-upload-option-label span {
@@ -692,6 +695,7 @@
     border: 1px solid #F1F1F1;
     border-radius: 2px;
     font-size: 12px;
+    color: black;
 }
 
 .rdw-image-modal-size-input:focus {

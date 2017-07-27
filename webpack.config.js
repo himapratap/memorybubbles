@@ -42,6 +42,10 @@ var config = {
             {
               test: /\.(eot|ttf|woff|woff2)$/,
               loader: 'file-loader?name=public/fonts/[name].[ext]',
+            },
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
 
         ]

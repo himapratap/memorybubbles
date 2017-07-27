@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import helpers from '../util/helpers'
 import renderHTML from 'react-render-html';
-
+import {Link} from 'react-router-dom';
 class Saved extends Component {
     constructor(props) {
         super(props);
@@ -29,8 +29,11 @@ class Saved extends Component {
 
         if (resultsLength == 0) {
             resultSection = (
-                <div>
-                    <h4>You have no memories yet</h4>
+                <div className="container">
+                    <div id="noMemCenter">
+                        <h1>You have no memories yet!</h1>
+                        <h2>Click the add memory button below to start building your stack.</h2>
+                    </div>
                 </div>
             );
         } else {
@@ -40,7 +43,7 @@ class Saved extends Component {
                         <h2>
                             {element.title}
                         </h2>
-                        <div>{renderHTML(element.data)}
+                        <div id="memcontentpad">{renderHTML(element.data)}
                         </div>
                     </article>
                 )
@@ -53,45 +56,26 @@ class Saved extends Component {
                     {resultSection}
                 </div>
                 <header id="header">
-                        <h1><strong>Dave Bokil's Memory Bubbles </strong></h1>
-                        <nav>
-                            <ul>
-                                <li><a href="#" className="icon fa-plus-circle">Add a memory</a></li>
-                            </ul>
-                        </nav>
-                    </header>
-                <footer id="footer" className="panel">
-                    <div className="inner split">
-                        <div>
-                            <section>
-                                <h2>My Social Media</h2>
-                                <ul className="icons">
-                                    <li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
-                                    <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-                                    <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-                                    <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
-                                    <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
-                                    <li><a href="#" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
-                                </ul>
-                            </section>
-                        </div>
-                        <div>
-                            <section>
-                                <h2>Add a memory to the cloud</h2>
-                                <form method="post" action="#">
-                                    <div className="field">
-                                        <textarea name="message" id="message" rows="4" placeholder="Memory Entry"></textarea>
-                                    </div>
-                                    <ul className="actions">
-                                        <li><input type="submit" value="Upload a pic" /></li>
-                                        <li><input type="reset" value="Clear" /></li>
-                                        <li><input type="submit" value="Add" className="special" /></li>
-                                    </ul>
-                                </form>
-                            </section>
-                        </div>
-                    </div>
-                </footer>
+                    <h1>
+                        <strong>{localStorage.name}'s 
+                        </strong>
+                    </h1>
+                    <h1 id="profilelogo">memorystack</h1>
+                    <nav>
+
+                        <ul>
+
+                            <li>
+                                <Link to="/new">
+                                    <button className="icon fa-plus special">Add a memory</button>
+                                </Link>
+                                <Link to="/">
+                                    <a className="icon fa-minus ">Logout</a>
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
             </div>
         );
     }

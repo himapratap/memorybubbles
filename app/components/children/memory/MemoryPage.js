@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import Time from 'react-time';
 import TextEditor from './TextEditor';
+import { Redirect } from 'react-router-dom';
 
 class MemoryPage extends Component {
 
@@ -8,7 +10,7 @@ class MemoryPage extends Component {
         this.state = {
             title: "",
             data: "",
-            userId : localStorage.userId
+           userId : localStorage.userId
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,32 +43,38 @@ class MemoryPage extends Component {
     render() {
         const name = localStorage.name;
         console.log(localStorage);
+            let now = new Date();
+            let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
+          
         return (
-            <div className="col-sm-12">
-                     <div>
-                        <h3>Hi {name} !!!</h3>
-                     </div>
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div >
-                                <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange}/>
-                            </div>
+<div className="col-sm-12">
+    <h1 id="headerlogo">memorystack</h1>
+    <div id="welcomecenter">
+        <h1>Welcome, {name}</h1>
+        <h3> <Time value={now}  format="MM/DD/YYYY" /></h3>
 
-                            <div>
-                                {/* <input type="text" name="data" id="data" value={this.state.data} onChange={this.handleInputChange}/> */}
-                                <TextEditor onChangeText={this.onChangeText}/>
-                            </div>
+    </div>
+    <div>
+        <form onSubmit={this.handleSubmit}>
+            <div className="row">
+                <div className="col-lg-8 col-lg-offset-2">{/*col-lg-4 col-lg-offset-2*/}
+                        {/*<label htmlFor="title"><h2>Title</h2></label>*/}
+                        <h2>Memory Title:</h2>
+                        <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
+                        <h2>Text Editor:</h2>
+                        <TextEditor onChangeText={this.onChangeText}/>
 
-                            <button type="submit" id="save">
-                                <span ></span>
-                                Save</button>
-                            <button type="submit" id="clearButton">
-                                <span aria-hidden="true"></span>
-                                Clear</button>
-                        </form>
-                    </div>
-                </div>
+            <button type="submit" className="special"id="save">
+                <span></span> Save
+            </button>
+            <button type="submit" id="clearButton">
+                <span aria-hidden="true"></span> Go Back
+            </button>
+                            </div>
+            </div>
+        </form>
+    </div>
+</div>
          )
     }
 }

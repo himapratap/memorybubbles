@@ -42,7 +42,7 @@ class TextEditor extends Component {
     }
 
     onEditorStateChange(editorContent) {
-console.log(editorContent);
+        console.log(editorContent);
         this.setState({editorContents : editorContent});
         // console.log('Editor current contents');
         // console.log(this.state.editorContents.getCurrentContent());
@@ -65,52 +65,35 @@ console.log(editorContent);
 
         }
         return (
-            <div className="demo-root">
-                <div className="demo-editorSection">
-                  <Editor
-                             wrapperClassName="demo-wrapper-wide"
-                             editorClassName="demo-editor"
-                             onEditorStateChange={this.onEditorStateChange.bind(this)}
-                             toolbar={{
-                               options: ['history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'],
-                               inline: { inDropdown: true },
-                               list: { inDropdown: true },
-                               textAlign: { inDropdown: true },
-                               link: { inDropdown: true },
-                               history: { inDropdown: true },
-                               image: { uploadCallback: uploadImageCallBack }
-                             }}/>
-                    {/* <Editor wrapperClassName="demo-wrapper-wide"
-                        editorClassName="demo-editor"
-                        toolbarOnFocus
-                        onEditorStateChange={this.onEditorStateChange.bind(this)}
-                        toolbar={{
-                              inline: {
-                                  inDropdown: false
-                              },
-                              list: {
-                                  inDropdown: true
-                              },
-                              textAlign: {
-                                  inDropdown: true
-                              },
-                            link: {
-                                  inDropdown: true
-                              },
-                              history: {
-                                  inDropdown: true
-                              },
-                              image: {
-                                   uploadCallback: uploadImageCallBack
-                              }
-                          }}
-                          placeholder = "Start typing.."
-
-                         /> */}
-                </div>
-                     <div dangerouslySetInnerHTML={{__html: this.state.html}}></div>
-              {/*    <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
-            </div>
+          <div className=""> {/*demo-root*/}
+              <div className="demo-editorSection">
+                  <Editor 
+                    wrapperClassName="demo-wrapper-wide" 
+                    editorClassName="demo-editor" 
+                    onEditorStateChange={this.onEditorStateChange.bind(this)} 
+                    toolbar={{ 
+                      options: [ 'history', 'remove', 'image', 'emoji', 'embedded', 'link', 'colorPicker', 'textAlign', 'list', 'fontFamily', 'fontSize', 'blockType', 'inline'], 
+                      inline: { inDropdown: true }, 
+                      list: { inDropdown: true }, 
+                      textAlign: { inDropdown: true }, 
+                      link: { inDropdown: true }, 
+                      history: { inDropdown: true }, 
+                      image: { uploadCallback: uploadImageCallBack, 
+                      defaultSize: { 
+                      margin: 'auto', 
+                      height: '100%', 
+                      backgroundposition: 'center', 
+                      position: 'absolute', 
+                      border: '0', 
+                      backgroundsize: 'cover', 
+                      top: '0', 
+                      width: '100%' } } }}/> 
+                  {/*
+                  <Editor wrapperClassName="demo-wrapper-wide" editorClassName="demo-editor" toolbarOnFocus onEditorStateChange={this.onEditorStateChange.bind(this)} toolbar={{ inline: { inDropdown: false }, list: { inDropdown: true }, textAlign: { inDropdown: true }, link: { inDropdown: true }, history: { inDropdown: true }, image: { uploadCallback: uploadImageCallBack } }} placeholder="Start typing.." /> */}
+              </div>
+              {/*
+              <div style={{ whiteSpace: 'nowrap' }}> {renderHTML(this.state.html)}</div> */}
+          </div>
         );
     }
 

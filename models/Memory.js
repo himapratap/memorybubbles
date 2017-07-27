@@ -7,6 +7,10 @@ var MemorySchema = new Schema({
     },
     data: {
         type: String
+      },
+    date:{
+        type: Date,
+         default: Date.now
     },
 
     shared: {

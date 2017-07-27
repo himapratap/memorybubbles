@@ -4,14 +4,15 @@
 import React from 'react';
 import MemoryPage from './memory/MemoryPage';
 import helpers from '../util/helpers';
+import { Redirect } from 'react-router-dom';
+
 
 class Book extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery: {},
-            results: []
+            showSaved: false
         }
         this.saveMemory = this.saveMemory.bind(this);
         console.log(`Book constructor called`);
@@ -22,16 +23,29 @@ class Book extends React.Component {
         console.log("Book component: Save memory called");
         console.log(memory);
         console.log(event);
-        helpers.saveMemoryInDB(memory);
-
+        helpers.saveMemoryInDB(memory).then((results) => {
+            this.setState({showSaved: true});
+        });
     }
 
     render() {
+        const {saved} = {
+            saved: {
+                pathname: '/saved'
+            }
+        }
+
+
+        if (this.state.showSaved) {
+            console.log('Book showing saved');
+            return (<Redirect to={saved}/>)
+        }
+
         return (
-            <div className="container">
-                <div className= "row">
+            <div className=""> {/* container */}
+               {/* <div className="">  row */}
                     <MemoryPage saveMemory={this.saveMemory}/>
-                </div>
+                {/*</div>*/}
             </div>
         )
     }
