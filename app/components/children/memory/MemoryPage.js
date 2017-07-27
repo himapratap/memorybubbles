@@ -61,7 +61,7 @@ class MemoryPage extends Component {
                             <div className="col-lg-8 col-lg-offset-2">{/*col-lg-4 col-lg-offset-2*/} {/*<label htmlFor="title"><h2>Title</h2></label>*/}
                                 <h2>Memory Title:</h2>
                                 <input type="text" name="title" id="title" onChange={this.handleInputChange.bind(this)}/>
-                                <h2>Text Editor:</h2>
+                                <h2>Memory Body:</h2>
                                 <TextEditor onChangeText={this.onChangeText}/>
 
                                 <button type="submit" className="special" id="save">
