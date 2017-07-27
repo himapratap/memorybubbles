@@ -106,8 +106,8 @@ class Login extends Component {
                                     <button type="submit" className="special">Submit</button>
                                     <div>{this.state.errMssg}</div>
                                 </form>
-                                <p>Need an account?<Link to="/signup"><p>Sign Up Now!</p>
-                                    </Link></p>
+                                <p>Need an account?</p><Link to="/signup"><p>Sign Up Now!</p>
+                                    </Link>
                         </div>
 
                     </div>*/}

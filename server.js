@@ -68,7 +68,7 @@ app.use(function(req, res, next) {
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-var dbUrl = "mongodb://localhost/memorybubbles";
+var dbUrl = "mongodb://localhost/memorystack";
 
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
